@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Chapter 1: Introduction to Groups</h1>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
+<p> 1.20: For $x \in G$, show $\vert x \vert = \vert x^{-1} \vert$. </p>
+<p>First, we need to deal with the case where either is not finite. Suppose the order of x, $\vert x \vert$, is not finite, and $\vert x^{-1} \vert = n$
+  for some positive integer $n$. Since $x^n = ((x^n)^{-1})^{-1} = ((x^{-1})^n)^{-1}$ by the exercises in 1.19 showing that $(x^a)^b = x^{ab}$ and 
+  $(x^a)^{-1} = x^{-a}$. On the right hand side, we see that $(x^{-1})^n) = e$, the identity element, by the assumption that the order of $x^{-1}$ is $n$.
+  Therefore, $x^n = e^{-1} = e$, since the identity is its own inverse. But this would imply that $\vert x \vert \leq n$, while we assumed it is not finite.
+  Therefore, it cannot be the case that $\vert x \vert$ is not finite while $\vert x^{-1} \vert$ is finite. </p>
+  
+<p>An identical argument works to demonstrate the case where $\vert x \vert$ is finite and $\vert x^{-1} \vert$ is not. </p>
+  
+<p>Now, suppose both orders are finite, and $\vert x \vert = m$ and $\vert x^{-1} \vert = n$, for positive integers $m$ and $n$. Consider $(x^{-1})^m$.
+  Referencing again the previous exercise, this is the same as $(x^m)^{-1}$, and since $x$ has order $m$, this means $n \leq m$. Similarly, the same
+  manipulation shows that $m \leq n$. Therefore $m = n$, and the two elements have the same order.
+<p>Under construction</p>
+</body>
+</html>
