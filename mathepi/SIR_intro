@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>  
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
+<h1>The SIR model and the introduction to the idea of $R_0$</h1>
+
+<p>Long ago I had popular twitter tread about the dynamical systems perspective of the reproduction number $R_0$ (R-naught). Here, I walk through it
+as I had at the time</p>
+  
+<p>Under construction</p>
+</body>
+</html>
