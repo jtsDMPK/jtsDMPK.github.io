@@ -14,7 +14,9 @@
 <h1>The SIR model and the introduction to the idea of $R_0$</h1>
 
 <p>Long ago I had popular thread on a social media site about the dynamical systems perspective of the reproduction number $R_0$ (R-naught). Here, I walk through it
-similarly to my treatment from before.</p>
+similarly to my treatment from before. The main pre-requisite is a solid understanding of calculus - in particular, knowing that a negative derivative means a function is decreasing
+and a positive derivative means it's decreasing. It helps a lot if you've seen differential equations in the past and are comfortable with equations with multiple
+variables as well, but it's not at all required to know how to find analytic solutions to differential equations.</p>
 
 <p>So first, a preliminary: $R_0$ is a general term describing the reproductive capacity of an organism. 
 In epidemiology it refers to the number of secondary cases that result from a single case in an entirely susceptible population.
@@ -23,12 +25,21 @@ base idea, that reproduction above replacement rate is typically required for po
 a pretty common theme that ideas in math-epi have analogues in population dynamics, with diseases playing roles as predators and
 hosts analogous to prey.</p>
 
-<p> So to give a little taste of how the mathematical side of some of these models looks,
+<p> To give a little taste of how the mathematical side of some of these models looks,
 I'm going to introduce you to one of the most humble and familiar models a mathematical epidemiologist will encounter: the SIR model.
 It's named as such because it's a system of three differential equations, one for each "compartment" of people: 
 Susceptible, Infectious (or Infected), and Recovered classes. </p>
 
+<p> We'll be using $S(t)$, $I(t)$, and $R(t)$ to denote the populations in each class at a given time $t$. For simplicity in notation, 
+  we often just use the letters $S$, $I$, and $R$ without the $(t)$ designation. Here's the system (isn't it cute?): </p>
 
+  <p>
+  $$\begin{aligned} 
+  \frac{dS}{dt} &= \Lambda - \beta SI - \mu S \\ 
+  \frac{dI}{dt} &= \beta SI - \alpha I - \mu I \\ 
+  \frac{dR}{dt} &= \alpha I - \mu R 
+  \end{aligned}$$
+  </p>
   
 <p>Under construction</p>
 </body>
