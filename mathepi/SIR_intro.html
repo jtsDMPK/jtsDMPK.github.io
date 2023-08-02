@@ -68,8 +68,36 @@ Susceptible, Infectious (or Infected), and Recovered classes. </p>
 
   <img src="../images/SIR flowchart.jpg" alt="The flowchart corresponding to the above described model, with boxes for S, I, and R." height="256" width="512">
 
-  
+  <p>Before we get too far along, I want to point out a couple things. I've already drawn attention to the fact that the model does not have disease-induced mortality.
+    Specifically, that all classes have the same death rate, $/mu$. We also have instantaneous infectivity in the infected class $I$. If you've heard of an SEIR model,
+    where E refers to the exposed class, this is a more standard way to bake a delay in infectivity into the model. The alternative is to build it as a delay differential
+    equation (DDE) which are terrible beasts and not for the faint of heart. </p>
 
+  <p> "Great, there's a cute little model here, but what can you <i>do</i> with it? I don't want to do a bunch of calculus to find analytical solutions" you say. </p>
+
+  <p> And I'd respond, "Wonderful! Because as of right now I only want to find equilibria, and that only requires some algebra." </p>
+
+  <p> That's one of the fun things about dynamics - though it's worthwhile to find analytic solutions where we can readily, we recognize in many cases that's not possible.
+    In fact, it's more often than not the case with nonlinear models that you can't get analytic solutions! Instead, we try to find equilibria and the corresponding 
+    regimes where solutions converge to those equilibria over time.</p>
+
+  <p> So what's an equilibrium of the system? Well, if you think back to calculus, if the derivative of a function is zero, it's constant (unchanging). That's what we're
+    interested in here. In this case, if all of $\frac{dS}{dt}$, $\frac{dI}{dt}$, and $\frac{dR}{dt}$ are 0, it means the size of each class is staying the same.
+    A word of caution: it doesn't mean there's no <i>movement</i> between classes at all - just that, if people are entering the class, the same number are leaving it.</p>
+
+  <p> So first, let's look at that disease free equilibrium (DFE). As a simple check, any epidemiological model should have one of these - it needs to describe in at least
+    some detail what the population pattern is in the absence of disease. It doesn't need to be particularly interesting, since, again, our goal isn't capturing mating patterns,
+    but it needs to not be something absurd. </p>
+
+  <p> The DFE basically answers the question, "What does this population do if there's no disease at all?" and the way it answers that is by just setting $I$ and $R$ to zero
+    and seeing what happens. At a glance, if $I = 0$, then there's no one to infect anyone in the susceptible class, and also no one moving into the recovered class.
+  That means we can just look at the susceptible class equation: $\frac{dS}{dt} = \Lambda - \mu S$. For the equilibrium, if $\frac{dS}{dt} = 0$, then we know $\Lambda = \mu S$.
+  That tells us that the size of the susceptible class in equilibrium is $S = \frac{\Lambda}{\mu}$. This is the value for which the birth and death rates are the same.</p>
+
+  <p> There's a little fine detail about the recovered class - we assumed $I = 0$, but didn't make any assumption about the recovered class $R$. And that's ok! We don't have
+    anyone entering it if $I=0$, and only have people leaving it through natural death, so if it's nonzero, it must be decreasing. So the DFE is $S = \frac{\Lambda}{\mu}$, $I = 0$, and $R = 0$.
+
+  
   
   
 <p>Under construction</p>
