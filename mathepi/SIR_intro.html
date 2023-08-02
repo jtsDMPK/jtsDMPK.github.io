@@ -40,6 +40,29 @@ Susceptible, Infectious (or Infected), and Recovered classes. </p>
   \frac{dR}{dt} &= \alpha I - \mu R 
   \end{aligned}$$
   </p>
+
+  <p> If you're familiar with calculus notation, you'll recognize that \frac{dS}{dt} denotes the change over time of $S(t)$, which refers to the susceptible class.
+    But what's going on with the right-hand side? First, we've got some stuff we call "demography" - birth and death rates denoted as $\Lambda$ and $\mu$ respectively.
+    We don't have anything complex like mating dynamics - we just have a constant birth rate $\Lambda$ - but that's ok, it's the kind of simplification we make when 
+    the model isn't being used to study that, and that allows us to get some traction analyzing the model. The death rate, $\mu$, is not time-dependent. This is another
+    simplification. It amounts to saying that the rate of death is constant at all times for the population - an exponential decline term.
+    Again, we're not doing any complex modeling of lifespans here, so it's reasonable for our purposes. We'll talk about the demography a little more when we get to the
+    disease-free equilibrium (DFE). </p>
+
+    <p>Since we're using this model to talk about disease dynamics, the most important term here is the $\beta S I$ term. Being negative, the term indicates individuals leaving
+    the susceptible class. So they leave the class, and they're not dying. Where do they go? </p>
+  
+  <p>Well, if we look ahead to the infected class, $I$, we see this is where they go when they leave. If you've ever looked at chemical kinetics, you might recognize this as a mass action interaction, where the rate of a reaction is directly
+      proportional to the concentrations of the reagents. For the sake of the analogy here, an interaction between a susceptible person and an infected person produces
+    a new infected person, with force of infection $\beta$. So the infected class grows with this mass action term as infected individuals create more infected individuals
+  from among the susceptible population.</p>
+
+  <p> What else do we have on this line? Well we have the demography again in the $-\mu I$ term, indicating a natural death rate - natural in that it's the same as the susceptible
+    class, so we don't have any disease-induced death here - and a $-\alpha I$ term. So for those, again - if they're not dying, where are they going?</p>
+
+  <p> Look ahead once more at the last line, where we have the change in time for the recovered class, $\frac{dR}{dt}$ encoded. Note here we have a positive $\alpha I$ term
+    to match the negative term in the infected class - so this is where they go! So $\alpha$ is the recovery rate for the infection. The only way people leave the recovered class
+    is through natural death, $\mu R$.</p>
   
 <p>Under construction</p>
 </body>
