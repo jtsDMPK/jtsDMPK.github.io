@@ -30,9 +30,32 @@
     assume that the infection process takes one day, so we can build the equations around a day-to-day update. These are all
     simplifying assumptions that can make the system of equations much easier to analyze. </p>
 
-  <p> Putting these together, we might have something like the following:
+  <p> Putting these together, we might have something like the following: </p>
 
-    
+  
+  <p>
+  $$\begin{aligned} 
+  S_{today} &=  S_{yesterday} - \beta S_{yesterday} I_{yesterday} \\ 
+  I_{today} &= I_{yesterday} + \beta S_{yesterday} I_{yesterday}
+  \end{aligned}$$
+  </p>
+
+  <p>This can be a little unweildy, so let's let $n$ designate the current day (or <i>timestep</i>, more generally) and $n-1$ the previous day. This tidies up the
+  difference equation a little bit into:</p>
+
+    <p>
+  $$\begin{aligned} 
+  S_{n} &=  S_{n-1} - \beta S_{n-1} I_{n-1} \\ 
+  I_{n} &= I_{n-1} + \beta S_{n-1} I_{n-1}
+  \end{aligned}$$
+  </p>
+
+  <p> This has a few features worth noting. The number of susceptible and infected persons depends entirely on the number from the previous day - as stated earlier,
+    we're assuming infection occurs after a day. We have a <i>force of infection</i> term in $\beta$, which can, for now, be thought of as the probability of a 
+    susceptible person becoming infected upon encountering an infectious person. We see that this moves the person from $S$ to $I$, as it subtracts from $S$
+    and adds to $I$. </p>
+
+  <p>This set of equations needs one more thing: an initial condition. You could 
 
   <p> If you're familiar with calculus notation, you'll recognize that $\frac{dS}{dt}$ denotes the change over time of $S(t)$, which refers to the susceptible class.
     But what's going on with the right-hand side? First, we've got some stuff we call "demography" - birth and death rates denoted as $\Lambda$ and $\mu$ respectively.
