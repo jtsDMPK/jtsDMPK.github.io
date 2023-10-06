@@ -37,14 +37,79 @@
   \end{aligned}$$
   </p>
 
-  <p> This has a few features worth noting. The number of susceptible and infected persons depends entirely on the number from the previous day - as stated earlier,
+  <p>This has a few features worth noting. The number of susceptible and infected persons depends entirely on the number from the previous day - as stated earlier,
     we're assuming infection occurs after a day. We have a <i>force of infection</i> term in $\beta$, which can, for now, be thought of as the probability of a 
     susceptible person becoming infected upon encountering an infectious person. We see that this moves the person from $S$ to $I$, as it subtracts from $S$
     and adds to $I$. </p>
 
-  <p>This set of equations needs one more thing: an initial condition. We'll call the initial values for the classes $S_0$ and $I_0$ for day 0. In the easiest case to analyze would be something like $S_0 = 1000$ and $I_0 = 0$. What would the system do in that case? Well, let's look at the equations and see what happens in one day. If we have $S_0 = 1000$ and $I_0 = 0$, then $S_1 = S_0 - \beta S_0 I_0$. But regardless of the value of $\beta$, the product $S_0 I_0$ is 0 since $I_0 = 0$. So $S_1 = S_0$. Similarly, $I_1 = I_0$. You can repeat this argument for any number of days. Therefore, the model does something we intuitively expect - if you don't have any infectious individuals in the population at the start, then there will not be any at any point in the future.</p>
+  <p>This set of equations needs one more thing: an initial condition. We'll call the initial values for the classes $S_0$ and $I_0$ for day 0. In the easiest case to analyze would be something like $S_0 = 1000$ and $I_0 = 0$. What would the system do in that case? Well, let's look at the equations and see what happens in one day. If we have $S_0 = 1000$ and $I_0 = 0$, then $S_1 = S_0 - \beta S_0 I_0$. But regardless of the value of $\beta$, the product $S_0 I_0$ is 0 since $I_0 = 0$. So $S_1 = S_0$. Similarly, $I_1 = I_0$. You can repeat this argument for any number of days. Therefore, the model does something we intuitively expect - if you don't have any infectious individuals in the population at the start, then there will not be any at any point in the future. This property of not changing with any timestep makes it a special solution called a <i>steady state</i>, and in this case we call it the <i>disease-free steady state</i> or the <i>disease-free equilibrium</i>.</p>
 
-  <p> Now for a formal matter - the model as we've described it so far is for the <i>number</i> of people in each class, but we can also use it to describe proportions. That is, in the previous description, we set $S_0 = 1000$ and $I_0 = 0$. We could similarly divide everything by $N$ (remember, $N$ is the total population size) and get the <i>proportion</i> of individuals in each compartment. This works out better in some cases - we aren't guaranteed that the product $\beta S I$ will always be an integer after all, and then we'd have to make a decision about how to round values. This way, we don't have to do any such thing to interpret the output of the model.</p>
+  <p>Now for a formal matter - the model as we've described it so far is for the <i>number</i> of people in each class, but we can also use it to describe proportions. That is, in the previous description, we set $S_0 = 1000$ and $I_0 = 0$. We could similarly divide everything by $N$ (remember, $N$ is the total population size) and get the <i>proportion</i> of individuals in each compartment. This works out better in some cases - we aren't guaranteed that the product $\beta S I$ will always be an integer after all, and then we'd have to make a decision about how to round values. This way, we don't have to do any such thing to interpret the output of the model. (Bonus question: How does the old value of $/beta$ relate to the new value of $/beta$ in making this change to the model to normalize it by population size?)</p>
+
+  <p>We already discussed the model behavior where $S_0 = N$, also known as the <i>disease-free steady state</i>, but what happens in a slightly more interesting case? Let's suppose 0.1% of the population is infectious at time 0. For simplicity, let's just say $\beta = 1$. What does the model do in that case? We can plot the first ten values of the model and see. Note that we're tracking using $n$ as the index for the days in the left column, followed by the values of $S$ and $I$ for that respective day. We'll use decimal representations instead of percents as well, so $S_0 = 0.999$ and $I_0 = 0.001$. The first day update comes from the equation. Since $\beta = 1$, we have $S_1 = S_0 - S_0 I_0$, or $S_1 = 0.999 - (0.999)(0.001)$. This gives us $S_1 = 0.998001$. We could similarly calculate $I_1$ using the equation, or we could use the fact that $S_n + I_n = 1$ for any timestep, since the values are proportions. You can repeat this process as desired. Below, the model is run out to $n=10$, rounding to the nearest thousandth for simplicity.</p>
+
+  <table>
+  <tr>
+    <th>n</th>
+    <th>S_n</th>
+    <th>I_n</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>0.999</td>
+    <td>0.001</td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>0.998</td>
+    <td>0.002</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>    
+</table>
 
 <p>Under construction</p>
 </body>
