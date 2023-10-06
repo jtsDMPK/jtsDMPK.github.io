@@ -126,7 +126,7 @@
   </tr>  
 </table>
 
-  <p> We see that, in this model, we essentially exhaust all of the susceptible compartment.</p>
+  <p> We see that, in this model, we essentially exhaust all of the susceptible compartment. If you're particularly astute, you might notice that we only actually got to $S_{13} = 0$ and $I_{13} = 1$ because of the way I was rounding the output. It's possible to show that, with infinite accuracy in the model, you won't ever reach this by looking closely at how the timesteps update and observing that the product $S_n I_n$ is always less than $S_n$ itself, as $I_n = 1 - S_n$.</p>
 
 <p>Under construction</p>
 </body>
