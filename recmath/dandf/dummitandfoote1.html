@@ -10,20 +10,28 @@
     tex: {
       inlineMath: [['$', '$']]
     }
-  };
+  }
 </script>
+  
 <p> 1.20: For $x \in G$, show $\vert x \vert = \vert x^{-1} \vert$. </p>
-<p>First, we need to deal with the case where either is not finite. Suppose the order of x, $\vert x \vert$, is not finite, and $\vert x^{-1} \vert = n$
-  for some positive integer $n$. Since $x^n = ((x^n)^{-1})^{-1} = ((x^{-1})^n)^{-1}$ by the exercises in 1.19 showing that $(x^a)^b = x^{ab}$ and 
-  $(x^a)^{-1} = x^{-a}$. On the right hand side, we see that $(x^{-1})^n) = e$, the identity element, by the assumption that the order of $x^{-1}$ is $n$.
-  Therefore, $x^n = e^{-1} = e$, since the identity is its own inverse. But this would imply that $\vert x \vert \leq n$, while we assumed it is not finite.
-  Therefore, it cannot be the case that $\vert x \vert$ is not finite while $\vert x^{-1} \vert$ is finite. </p>
+  
+<p>First, we need to deal with the case where either is not finite. Suppose the order of x, $\vert x \vert$, is not finite, and $\vert x^{-1} \vert = n$ for some positive integer $n$. Since $x^n = ((x^n)^{-1})^{-1} = ((x^{-1})^n)^{-1}$ by the exercises in 1.19 showing that $(x^a)^b = x^{ab}$ and $(x^a)^{-1} = x^{-a}$. On the right hand side, we see that $(x^{-1})^n) = e$, the identity element, by the assumption that the order of $x^{-1}$ is $n$. Therefore, $x^n = e^{-1} = e$, since the identity is its own inverse. But this would imply that $\vert x \vert \leq n$, while we assumed it is not finite. Therefore, it cannot be the case that $\vert x \vert$ is not finite while $\vert x^{-1} \vert$ is finite. </p>
   
 <p>An identical argument works to demonstrate the case where $\vert x \vert$ is finite and $\vert x^{-1} \vert$ is not. </p>
   
-<p>Now, suppose both orders are finite, and $\vert x \vert = m$ and $\vert x^{-1} \vert = n$, for positive integers $m$ and $n$. Consider $(x^{-1})^m$.
-  Referencing again the previous exercise, this is the same as $(x^m)^{-1}$, and since $x$ has order $m$, this means $n \leq m$. Similarly, the same
-  manipulation shows that $m \leq n$. Therefore $m = n$, and the two elements have the same order.
+<p>Now, suppose both orders are finite, and $\vert x \vert = m$ and $\vert x^{-1} \vert = n$, for positive integers $m$ and $n$. Consider $(x^{-1})^m$. Referencing again the previous exercise, this is the same as $(x^m)^{-1}$, and since $x$ has order $m$, this means $n \leq m$. Similarly, the same calculation shows that $m \leq n$. Therefore $m = n$, and the two elements have the same order.
+
+
+<p> 1.22: For $x,g \in G$, show $\vert x \vert = \vert g^{-1} x g \vert$. Deduce that $\vert ab \vert = \vert ba \vert$.</p>
+
+<p>This time, first consider the finite case. Suppose $\vert x \vert = n$ and $\vert g^{-1}xg \vert = m$. Consider $(g^{-1} x g)^n$. When expanding this product, there are $n-1$ pairs of $g g^-1$ which are identity by definition, so simplifying this leads to $g^{-1} x^n g$. By hypothesis, $x^n = e$, so with one last $g g^-1$ cancellation, we see the entire product vanishes, and $(g^{-1} x g)^n = e$. Therefore, $m \leq n$.</p>
+
+<p>Now consider $x^m$. Since we can freely multipy by $e = g g^{-1}$, we have $x^m = g(g^{-1}xg)^{m-1}g^{-1}x$ by multiplying by it before each appearance of $x$ in the product. Since $\vert (g^{-1}xg) \vert = m$, we have $(g^{-1}xg)^{m-1} = (g^{-1}xg)^{-1}$. And by <a href="Shoes-Socks">https://proofwiki.org/wiki/Inverse_of_Product</a> (aka inverse of product is product of inverses, reversed in order), we have $(g^{-1}xg)^{-1} = g^{-1}x^{-1}g$. So putting all this together, $x^m = g(g^{-1}xg)^{m-1}g^{-1}x = g g^{-1}x^{-1}g g^{-1} x$. Cancelling the two $g g^{-1}=e$ terms, we are left with $x^{-1}x = e$. Therefore, $m \leq n$. As in 1.20, we have both $n \leq m$ and $m \leq n$, so $m = n$.</p>
+
+<p> For the case where either is infinite and the other finite, an argument identical to that in 1.20 will lead to a contradiction. </p>
+
+<p> Lastly, to show $\vert ab \vert = \vert ba \vert$, observe that the proof of the prevous part gives us $\vert ab \vert = \vert g^{-1}abg \vert$ for any arbitrary element $g \in G$. If we take the particular case of $g = a$, we have $a^{-1}aba = ba$, and so $\vert ab \vert = \vert ba \vert$.</p>
+  
 <p>Under construction</p>
 </body>
 </html>
