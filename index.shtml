@@ -143,6 +143,7 @@
 <br>
 <br>
 <br>
+<p> You are visitor number: <!--#exec cgi="/cgi-bin/counter"--> </p>
 <br>
 <br>
 <br>
