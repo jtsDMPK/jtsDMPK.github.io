@@ -89,26 +89,34 @@
 
 <br>
 
+<h3> Summary of Chapter </h3>
+
+<p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes.</p>
+
 <h3> Least/Greatest Integer Property </h3>
 <p> A nonempty set of integers that is bounded below/above contains a least/greatest element, respectively.</p>
+<p> Note: This boundedness property tells us another thing, like that a set that is bounded above and below both must be finite. I will not provide a proof of this either, but it should be evident to </p>
+<p> Note: A more advanced (advanced undergraduate or above) text might prove this starting from a construction of the integers, but this is <i>not</i> that text. It is simply stated as an observation at the beginning, as the reader is assumed to be familiar with the integers. This observation does not become relevant until we get to the greatest common divisor.</p>
 
 <br>
 
 <h3> Closure of integers under addition, subtration, and multiplication </h3>
 <p> The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</p>
+<p> Note: This property is not explicitly stated in this text, but would likely be stated in a more abstract text. I state it here because it's </p>
 
-<h3> Divisibility </h3>
-<p> Def. We say that $a$ divides $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
+<h3> Definition: Divisibility </h3>
+<p> Def. We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
 
 <br>
 
-<h3> Exercises </h3>
+<h3> Exercises on simple properties of divisibility </h3>
 
 <p> Exercise 1. Which integers divide zero? </p>
 <p> Claim: Every integer divides zero. </p>
 <p> Proof: By definition, if $a$ divides $0$, then there is some integer $d$ such that $ad = 0$. If $d = 0$, then $a0 = 0$ for any integer $a$. Therefore, all integers divide $0$. </p>
 <br>
-<p> Exercise 2. Show that if $a \vert b$ and $b \vert c$, then $a \vert c$. </p>
+<p> Exercise 2. If $a \vert b$ and $b \vert c$, then does $a \vert c$? </p>
+<p> Claim: If $a \vert b$ and $b \vert c$, then $a \vert c$.
 <p> Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$. </p>
   
 <br>
@@ -119,9 +127,20 @@
 <p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
 <br> 
 <p> Lemma 2: The divisor of a collection of integers is a divisor of any linear combination of those integers. </p>
+<p> Note: The text does not use this vocabulary in calling it a linear combination, but the recognition of this as such is very useful shorthand for more advanced topics. </p>
 <p> Statement: If $d \vert a_1$, $d \vert a_2$, $\dots$, $d \vert a_n$, then $d \vert (c_1 a_1 + c_2 a_2 + \cdots + c_n a_n)$ for any integers $c_1, c_2, \dots, c_n$. </p>
 <p> Proof: By definition, there are integers $q_1, q_2, \dots q_n$ such that $dq_1 = a_1$, $dq_2 = a_2$, $\dots$, $dq_n = a_n$. Therefore, $c_1a_1 + c_2a_2 + \cdots + c_na_n = d(c_1q_1 + c_2q_2 + \cdots + c_nq_n)$. By closure of integers under multiplication and addition, the term in the parentheses is itself an integer, proving the statement. </p>
-
+<p> Note: This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties.</p>
+<br>
+<h3> Definition: Greatest Common Divisor </h3>
+<p> Def. We say $d$ is the <b>greatest common divisor</b> of $a$ and $b$ if and only if </p>
+<ol type="i">
+  <li> $d \vert a$ and $d \vert b$, and </li>
+  <li> if $c \vert a$ and $c \vert b$, then $c \leq d$. </li>
+</ol>
+<p> We may use the notation $d = (a, b)$ to denote this property.</p>
+<p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic.</p>
+<p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element.</p>
 
 <br>
 <p>Under construction</p>
