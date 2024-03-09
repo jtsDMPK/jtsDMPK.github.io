@@ -38,6 +38,9 @@
     h4 {
       color : #FFFFFF;
     }
+    ol {
+      color : #FFFFFF;
+    }
   </style>
   
   <style> /* Sets the color options for links to something other than the defaults. */
@@ -91,7 +94,7 @@
 
 <h3> Summary of Chapter </h3>
 
-<p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes.</p>
+<p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes. Some of the more interesting examples (read as: not examples for calculation) are worked as well.</p>
 
 <h3> Least/Greatest Integer Property </h3>
 <p> A nonempty set of integers that is bounded below/above contains a least/greatest element, respectively.</p>
@@ -131,17 +134,29 @@
 <p> Statement: If $d \vert a_1$, $d \vert a_2$, $\dots$, $d \vert a_n$, then $d \vert (c_1 a_1 + c_2 a_2 + \cdots + c_n a_n)$ for any integers $c_1, c_2, \dots, c_n$. </p>
 <p> Proof: By definition, there are integers $q_1, q_2, \dots q_n$ such that $dq_1 = a_1$, $dq_2 = a_2$, $\dots$, $dq_n = a_n$. Therefore, $c_1a_1 + c_2a_2 + \cdots + c_na_n = d(c_1q_1 + c_2q_2 + \cdots + c_nq_n)$. By closure of integers under multiplication and addition, the term in the parentheses is itself an integer, proving the statement. </p>
 <p> Note: This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties.</p>
+
 <br>
+
 <h3> Definition: Greatest Common Divisor </h3>
-<p> Def. We say $d$ is the <b>greatest common divisor</b> of $a$ and $b$ if and only if </p>
+<p> Def. We say $d$ is the <b>greatest common divisor</b> (or $GCD$) of $a$ and $b$ if and only if </p>
 <ol type="i">
   <li> $d \vert a$ and $d \vert b$, and </li>
   <li> if $c \vert a$ and $c \vert b$, then $c \leq d$. </li>
 </ol>
 <p> We may use the notation $d = (a, b)$ to denote this property.</p>
 <p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic.</p>
-<p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element.</p>
+<p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. This also means $(0,0)$ is undefined, since those sets are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that not both $a$ and $b$ are zero, and the greated common divisor is defined.</p>
+<br>
 
+<h3> Exercises on simple properties of the GCD</h3>
+
+<p> Exercise 5. What is $(n,1)$? What about $(n,0)$?</p>
+<p> Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$.</p>
+<p> Proof: For $(n,1)$, observe that the only factors of $1$ are $\pm 1$. Also note for any integer $n$, since $1$ is the multiplicative identity element in the integers, $n1 = n$, and therefore $1$ is a divisor of $n$. Since $1$ is the greatest divisor of $1$, and $1$ is also a divisor of $n$, this suffices to show $(n,1)=1$. To show $(n,0) = n$, it is sufficient to observe that for any $n$, the greatest divisor of it is $n$ itself; and further, all integers divide $0$.</p>
+<p> Exercise 6. If $d$ is a positive integer, what is $(d,nd)$?</p>
+<p> Aside: <a href="https://www.youtube.com/watch?v=QgOB7VWjlSQ&ab_channel=JMlovergurl">It's D&D!</a></p>
+<p> Claim: For any positive integer $d$, $(d,nd) = d$.</p>
+<p> Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$, $d \vert nd$. Therefore, $(d,nd)=d$.</p>
 <br>
 <p>Under construction</p>
 
