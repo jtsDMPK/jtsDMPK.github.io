@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title> jtsDMPK: DandF 1 </title>
+  <title> jtsDMPK: Dudley 1 </title>
   <style> /* Creates the background image, and sets it as static in the background with the scroll as opposed to repeating */
     body {
       background-image: url('../images/mathematics-3d-blender-illustration-xl-darkened.jpeg');
@@ -94,6 +94,9 @@
 
 <br>
 
+<h3> Closure of integers under addition, subtration, and multiplication </h3>
+<p> The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</p>
+
 <h3> Divisibility </h3>
 <p> Def. We say that $a$ divides $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
 
@@ -102,13 +105,25 @@
 <h3> Exercises </h3>
 
 <p> Exercise 1. Which integers divide zero? </p>
-<p> By definition, if $a$ divides $0$, then there is some integer $d$ such that $ad = 0$. If $d = 0$, then $a0 = 0$ for any integer $a$. Therefore, all integers divide $0$. </p>
+<p> Claim: Every integer divides zero. </p>
+<p> Proof: By definition, if $a$ divides $0$, then there is some integer $d$ such that $ad = 0$. If $d = 0$, then $a0 = 0$ for any integer $a$. Therefore, all integers divide $0$. </p>
 <br>
 <p> Exercise 2. Show that if $a \vert b$ and $b \vert c$, then $a \vert c$. </p>
 <p> Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$. </p>
   
- 
-  
+<br>
+
+<h3> Lemmata </h3>
+<p> Lemma 1: The divisor of two numbers is a divisor of their sum. </p>
+<p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b). </p>
+<p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
+<br> 
+<p> Lemma 2: The divisor of a collection of integers is a divisor of any linear combination of those integers. </p>
+<p> Statement: If $d \vert a_1$, $d \vert a_2$, $\dots$, $d \vert a_n$, then $d \vert (c_1 a_1 + c_2 a_2 + \cdots + c_n a_n)$ for any integers $c_1, c_2, \dots, c_n$. </p>
+<p> Proof: By definition, there are integers $q_1, q_2, \dots q_n$ such that $dq_1 = a_1$, $dq_2 = a_2$, $\dots$, $dq_n = a_n$. Therefore, $c_1a_1 + c_2a_2 + \cdots + c_na_n = d(c_1q_1 + c_2q_2 + \cdots + c_nq_n)$. By closure of integers under multiplication and addition, the term in the parentheses is itself an integer, proving the statement. </p>
+
+
+<br>
 <p>Under construction</p>
 
   <br>
