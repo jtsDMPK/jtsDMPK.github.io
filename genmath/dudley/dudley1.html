@@ -94,25 +94,29 @@
 
 <h3> Summary of Chapter </h3>
 
-<p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes. Some of the more interesting examples (read as: not examples for calculation) are worked as well.</p>
+<p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes. Some of the more interesting examples (read as: not examples for calculation) are worked as well. Even for a more advanced student, these exercises can be useful to revisit to see the general manipulations typical for work within the (more abstract) integral domains and unique factorization domains encountered in an abstract algebra course.</p>
 
-<h3> Least/Greatest Integer Property </h3>
+<br>
+  
+<h4> Least/Greatest Integer Property </h4>
 <p> A nonempty set of integers that is bounded below/above contains a least/greatest element, respectively.</p>
 <p> Note: This boundedness property tells us another thing, like that a set that is bounded above and below both must be finite. I will not provide a proof of this either, but it should be evident to </p>
 <p> Note: A more advanced (advanced undergraduate or above) text might prove this starting from a construction of the integers, but this is <i>not</i> that text. It is simply stated as an observation at the beginning, as the reader is assumed to be familiar with the integers. This observation does not become relevant until we get to the greatest common divisor.</p>
 
 <br>
 
-<h3> Closure of integers under addition, subtration, and multiplication </h3>
+<h4> Closure of integers under addition, subtration, and multiplication </h4>
 <p> The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</p>
 <p> Note: This property is not explicitly stated in this text, but would likely be stated in a more abstract text. I state it here because it's </p>
 
-<h3> Definition: Divisibility </h3>
+<br>
+
+<h4> Definition: Divisibility </h4>
 <p> Def. We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
 
 <br>
 
-<h3> Exercises on simple properties of divisibility </h3>
+<h4> Exercises on simple properties of divisibility </h4>
 
 <p> Exercise 1. Which integers divide zero? </p>
 <p> Claim: Every integer divides zero. </p>
@@ -124,7 +128,7 @@
   
 <br>
 
-<h3> Lemmata </h3>
+<h4> Lemmata </h4>
 <p> Lemma 1: The divisor of two numbers is a divisor of their sum. </p>
 <p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b). </p>
 <p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
@@ -137,7 +141,7 @@
 
 <br>
 
-<h3> Definition: Greatest Common Divisor </h3>
+<h4> Definition: Greatest Common Divisor </h4>
 <p> Def. We say $d$ is the <b>greatest common divisor</b> (or <b>GCD</b>) of $a$ and $b$ if and only if </p>
 <ol type="i">
   <li> $d \vert a$ and $d \vert b$, and </li>
@@ -148,7 +152,7 @@
 <p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. This also means $(0,0)$ is undefined, since those sets are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that not both $a$ and $b$ are zero, and the greated common divisor is defined.</p>
 <br>
 
-<h3> Exercises on simple properties of the GCD</h3>
+<h4> Exercises on simple properties of the GCD</h4>
 
 <p> Exercise 5. What is $(n,1)$? What about $(n,0)$?</p>
 <p> Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$.</p>
@@ -160,7 +164,7 @@
 
 <br>
 
-<h3> Dividing two numbers by their GCD gives a relatively prime pair</h3>
+<h4> Dividing two numbers by their GCD gives a relatively prime pair</h4>
 <p> Note: The concept of primality, and of relative primes (co-primes) will be discussed more heavily in the next chapter, but using the term here explicitly serves to foreshadow the importance of this theorem. </p>
 <p> Theorem 1. If $(a,b) = d$, then $\left(\frac{a}{d}, \frac{b}{d}\right) = 1$.</p>
 <p> Note: The proof of this theorem uses a common strategy that is employed throughout math. It exploits the fact that if you can put a lower bound and an upper bound on a value, and those bounds are the same, then the result is that value. This strategy is often leveraged when you have inequalities available by other theorems or lemmata and definitions. The last step is explicitly stated here, but is generally omitted from proofs of this nature as apparent to the reader.</p>
