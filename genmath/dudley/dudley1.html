@@ -189,11 +189,20 @@
 <p> Note 2: This is one of the most powerful, and oldest, results about integer division, and is the longest proof encountered thus far in the text, especially because it posits existence and uniqueness. In the rational numbers or even the real numbers, divisibility works without remainders. </p>
 <p> Proof: Since $a$ and $b$ are both positive integers, consider the set of non-negative integers given by $\left{ a, a-b, a-2b, \dots \right}$. It's bounded below by $0$, and so contains a least element by the least integer principle. Call that value $a-qb$. Note that $a-(q+1)b \lt 0$ by this construction, so $q$ is in fact the greatest multiple of $b$ that can be subracted from $a$. Now let $r = a-bq$. This gives us both of $q$ and $r$, so this suffices to show the existence of $q$ and $r$ such that $a= bq + r$.</p>
 <p> Next, we need to show uniqueness. The strategy here is to posit a second candidate pair, and show that they are the same as the originally desired values.</p>
-<p> Suppose then that there exist values $q'$ and $r'$ also satisfying the conditions; that is, suppose $a = bq+r = bq'+r'$, with $0 \leq r \lt b$ and $0 \leq r' \lt b$. By subtraction, we have $0 = b(q-q')+(r-r')$. Since $b$ divides both $0$ and $b(q-q')$, it must divide the other term: $b \vert (r-r')$. But by the previous inequalities on $r$ and $r'$, it must be the case that $-b \lt r-r' \lt b$, and the only multiple of $b$ between $-b$ and $b$ is $0$. Therefore, $r-r'=0$, establishing that $r=r'$. Since the remainders are the same, the fact that $0 = b(q-q')+(r-r')$ means that $q-q'=0$ as well. This suffices to establish uniqueness of $q$ and $r$, and completes the proof of the Euclidean division algorithm.</p>
+<p> Suppose then that there exist values $q'$ and $r'$ also satisfying the conditions; that is, suppose $a = bq+r = bq'+r'$, with $0 \leq r \lt b$ and $0 \leq r' \lt b$. By subtraction, we have $0 = b(q-q')+(r-r')$. Since $b$ divides both $0$ and $b(q-q')$, it must divide the other term, by Lemma 1: $b \vert (r-r')$. But by the previous inequalities on $r$ and $r'$, it must be the case that $-b \lt r-r' \lt b$, and the only multiple of $b$ between $-b$ and $b$ is $0$. Therefore, $r-r'=0$, establishing that $r=r'$. Since the remainders are the same, the fact that $0 = b(q-q')+(r-r')$ means that $q-q'=0$ as well. This suffices to establish uniqueness of $q$ and $r$, and completes the proof of the Euclidean division algorithm.</p>
 
 <br>
 <br>
 
+<h4> Lemma </h4>
+<p> Lemma 3. If $a = bq + r$, then $(a,b)=(b,r)$.
+<p> Proof: First, we seek to show that, given $(a,b)$, it follows that the value of $(b,r)$ is the same. Let $d = (a,b)$. By Lemma 1, if $d \vert a$ and $d \vert b$ and $a = bq+r$, then $d \vert r$. Now we seek to show that $d$ is the greatest common divisor of $b$ and $r$ - suppose that $c$ is any common divisor of $b$ and $r$. By Lemma 1 again, it follows that $c$ divides $a$ as well, and so $c$ is a divisor of both $a$ and $b$. Since $c$ and $d$ are both divisors of $a$ and $b$, it follows that $c \leq d$. This suffices to show that $d = (b,r)$. </p>
+<p> Note: We could have easily started from $d = (b,r)$ and gone the other way just as readily, and it might be helpful to convince yourself of this. </p>
+
+<br>
+<br>
+
+  
 <p>Under construction</p>
 
   <br>
