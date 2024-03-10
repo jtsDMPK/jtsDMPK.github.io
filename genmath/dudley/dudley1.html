@@ -91,11 +91,13 @@
 <h1>Chapter 1: Integers</h1>
 
 <br>
+<br>
 
 <h3> Summary of Chapter </h3>
 
 <p> This chapter has the goal of showing some basic results in divisibility properties, building up to the greatest common divisor and the Euclidean division algorithm. There important results are highlighted below, with added notes. Some of the more interesting examples (read as: not examples for calculation) are worked as well. Even for a more advanced student, these exercises can be useful to revisit to see the general manipulations typical for work within the (more abstract) integral domains and unique factorization domains encountered in an abstract algebra course.</p>
 
+<br>
 <br>
   
 <h4> Least/Greatest Integer Property </h4>
@@ -104,16 +106,19 @@
 <p> Note: A more advanced (advanced undergraduate or above) text might prove this starting from a construction of the integers, but this is <i>not</i> that text. It is simply stated as an observation at the beginning, as the reader is assumed to be familiar with the integers. This observation does not become relevant until we get to the greatest common divisor.</p>
 
 <br>
+<br>
 
 <h4> Closure of integers under addition, subtration, and multiplication </h4>
 <p> The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</p>
 <p> Note: This property is not explicitly stated in this text, but would likely be stated in a more abstract text. I state it here because it's </p>
 
 <br>
+<br>
 
 <h4> Definition: Divisibility </h4>
 <p> Def. We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
 
+<br>
 <br>
 
 <h4> Exercises on simple properties of divisibility </h4>
@@ -126,6 +131,7 @@
 <p> Claim: If $a \vert b$ and $b \vert c$, then $a \vert c$.
 <p> Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$. </p>
   
+<br>
 <br>
 
 <h4> Lemmata </h4>
@@ -140,6 +146,7 @@
 <p> Note: This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties.</p>
 
 <br>
+<br>
 
 <h4> Definition: Greatest Common Divisor </h4>
 <p> Def. We say $d$ is the <b>greatest common divisor</b> (or <b>GCD</b>) of $a$ and $b$ if and only if </p>
@@ -150,8 +157,10 @@
 <p> We may use the notation $d = (a, b)$ to denote this property.</p>
 <p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic.</p>
 <p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. This also means $(0,0)$ is undefined, since those sets are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that not both $a$ and $b$ are zero, and the greated common divisor is defined.</p>
-<br>
 
+<br>
+<br>
+  
 <h4> Exercises on simple properties of the GCD</h4>
 
 <p> Exercise 5. What is $(n,1)$? What about $(n,0)$?</p>
@@ -163,6 +172,7 @@
 <p> Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$, $d \vert nd$. Therefore, $(d,nd)=d$.</p>
 
 <br>
+<br>
 
 <h4> Theorem: Dividing two numbers by their GCD gives a relatively prime pair</h4>
 <p> Note: The concept of primality, and of relative primes (co-primes) will be discussed more heavily in the next chapter, but using the term here explicitly serves to foreshadow the importance of this theorem. </p>
@@ -171,15 +181,17 @@
 <p> Proof: Let $c = \left(\frac{a}{d}, \frac{b}{d}\right)$. First, we will show that $c /geq 1$. From exercise 5, we showed that $1$ divides any integer, so it is a lower bound on any GCD; therefore, $c \geq 1$. Next, we will show that $c \leq 1$. Since the GCD is $c$, $c \vert \frac{a}{d}$ and $c \vert \frac{b}{d}$. Specifically, there is a pair of integers, $q$ and $r$, such that $cq = \frac{a}{d}$ and $cr = \frac{b}{d}$. Rearranging these equalities gives us that $(cd)q = a$ and $(cd)r = b$. From this we see that $cd$ is a common divisor of both $a$ and $b$, and the product $cd$ cannot be greater than $d$ - else $d$ would not be the greatest common divisor. Since $d$ is positive, it follows then that $c \leq 1$. Having shown $c \geq 1$ and $c \leq 1$, we must conclude that $c = 1$.
 
 <br>
+<br>
 
 <h4> Theorem: The (Euclidean) Division Algorithm </h4>
 <p> Theorem 2. Given positive integers $a$ and $b$, $b \neq 0$, there exist unique integers $q$ and $r$, with $0 \leq r \lt b$ such that $a = bq + r$. </p>
 <p> Note 1: It is standard practice when stating this theorem to use $q$ and $r$ since they denote, respectively, a quotient and a remainder.
 <p> Note 2: This is one of the most powerful, and oldest, results about integer division, and is the longest proof encountered thus far in the text, especially because it posits existence and uniqueness. In the rational numbers or even the real numbers, divisibility works without remainders. </p>
-<p> Proof: Since $a$ and $b$ are both positive integers, consider the set of non-negative integers given by $\left{a, a-b, a-2b, \dots \right}$. It's bounded below by $0$, and so contains a least element by the least integer principle. Call that value $a-qb$. Note that $a-(q+1)b \lt 0$ by this construction, so $q$ is in fact the greatest multiple of $b$ that can be subracted from $a$. Now let $r = a-bq$. This gives us both of $q$ and $r$, so this suffices to show the existence of $q$ and $r$ such that $a= bq + r$.</p>
+<p> Proof: Since $a$ and $b$ are both positive integers, consider the set of non-negative integers given by $\left{ a, a-b, a-2b, \dots \right}$. It's bounded below by $0$, and so contains a least element by the least integer principle. Call that value $a-qb$. Note that $a-(q+1)b \lt 0$ by this construction, so $q$ is in fact the greatest multiple of $b$ that can be subracted from $a$. Now let $r = a-bq$. This gives us both of $q$ and $r$, so this suffices to show the existence of $q$ and $r$ such that $a= bq + r$.</p>
 <p> Next, we need to show uniqueness. The strategy here is to posit a second candidate pair, and show that they are the same as the originally desired values.</p>
 <p> Suppose then that there exist values $q'$ and $r'$ also satisfying the conditions; that is, suppose $a = bq+r = bq'+r'$, with $0 \leq r \lt b$ and $0 \leq r' \lt b$. By subtraction, we have $0 = b(q-q')+(r-r')$. Since $b$ divides both $0$ and $b(q-q')$, it must divide the other term: $b \vert (r-r')$. But by the previous inequalities on $r$ and $r'$, it must be the case that $-b \lt r-r' \lt b$, and the only multiple of $b$ between $-b$ and $b$ is $0$. Therefore, $r-r'=0$, establishing that $r=r'$. Since the remainders are the same, the fact that $0 = b(q-q')+(r-r')$ means that $q-q'=0$ as well. This suffices to establish uniqueness of $q$ and $r$, and completes the proof of the Euclidean division algorithm.</p>
 
+<br>
 <br>
 
 <p>Under construction</p>
