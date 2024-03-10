@@ -230,9 +230,15 @@
     <th> $0 \leq r_{k+2} \lt r_{k+1}$ </th>
   </tr>
 </table> 
-<p> Specifically, for sufficiently large $k$, say $k = t$, we have $r_{t-1} = $r_t q_{t+1}$, and subsequently, $(a,b)=r_t$. </p>
-<p> Proof: </p>
-<p>Under construction</p>
+<p> Specifically, for sufficiently large $k$, say $k = t$, we have $ r_{t-1} = $r_t q_{t+1} $, and subsequently, $(a,b)=r_t$. </p>
+<p> Proof: First, observe that the sequence of non-negative integers given by $ \{ b, r, r_1, \dots, \} is strictly decreasing by the division algorithm, and is bounded below by zero. Therefore, it has a final element before the remainders reach $0$. Let the first $0$ element be $ r_{t+1} $. Then $r_{t-1} = r_t q_{t+1} $, noting that $r_t$ divides both sides. Now, apply Lemma 3 repeatedly to the sequence of equalities given by the division algorithm, working back up the chart.</p>
+<p> This repeated application of Lemma 3 tells us that $r_t = (r_{t-1}, r{t}) = \cdots = (b,r) = (a,b)$, and completes the proof. </p>
+<p> Note: If either of $a$ and $b$ are negative, you may want to convince yourself that $(a,b) = (\pm a, \pm b)$ and see that the proof follows just the same.</p>
+
+<br>
+<br>
+  
+  <p>Under construction</p>
 
   <br>
 <br>
