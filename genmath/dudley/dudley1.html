@@ -293,15 +293,46 @@
 <h4> Problems </h4>
 <p> The problems provided at the end of the chapter are first a few calculation problems, followed by some more interesting abstract ones. Since I'm less interested in calculation, I'll reproduce a few of the later ones here:</p>
 <br>
-<p> Exercise 5. If $N = abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$. </p>
+
+<p> Problem 5. If $N = abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$. </p>
 <p> Solution: Rearrange the equation as $N - a(bc) = 1$. This is a linear combination of $N$ and $a$, specifically as $(1)N + (-bc)a$. By Corollary 3.5.2, $N$ and $a$ are relatively prime, and $(N,a)=1$. Associativity of the term $abc$ is sufficient to show the argument also holds for $(N,b)$ and $(N,c)$.</p>
+
 <br>
-<p> Exercise 7. If $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
+
+<p> Problem 7. If $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
 <p> Solution: Suppose $a \vert b$ and $b \vert a$. Then there exists some integer $q$ such that $qa = b$, and there also exists some integer $r$ such that $a = rb$. Substitution of the first into the latter gives us $a = r(qa) = (rq)a$. Therefore, $rq=1$, and so either both $r=q=1$ or $r=q=-1$ since these are the only factors of 1. If $r=q=1$, then $a=b$; else, if $r=q=-1$, then $a = -b$.</p>
+
 <br>
-<p> Exercise 8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
+  
+<p> Problem 8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
 <p> Solution: Let $d=(a,b)$. By definition, $d \vert a$ and $d \vert b$, and $d$ is the maximal integer satisfying this condition. We know by hypothesis that $a \vert b$, and $a \vert a$ trivially. Since $a \gt 0$, its greatest divisor is $a$ itself; therefore, by the maximality condition, $d=a$.</p>
 
+<br>
+
+<p> Problem 9. Prove that $((a,b),b) = (a,b)$.</p>
+<p> Solution: Let $d = (a,b)$. Observe that $d \vert b$, and $d \gt 0$; therefore, by Exercise 8, $(d,b)=d$.</p>
+
+<br> 
+
+<p>Problem 10. </p>
+<ol style="a">
+  <li>Prove that $(n,n+1)=1$ for all $n \gt 0$.</li>
+  <li>If $n \gt 0$, what can $(n,n+2)$ be?</li>
+</ol>
+<p> Solution: </p>
+<ol style="a">
+  <li>Since $n \gt 0$ by hypothesis, both $n$ and $n+1$ are positive. First, consider the case where $n=1$. If so, exercise 5 applies, and we are done. Otherwise, apply the division algorithm and see that $(n+1)=qn+r$. Since $n \gt 1$, it must be the case that $q = 1$ and $r = 1$. Now apply Lemma 3: $(n+1,n) = (n,1) = 1$, applying exercise 5 again on the second expression.</li>
+  <li>Suppose we have instead $(n,n+2)$. As above, if $n = 1$, we have $(n,n+2) = 1$. Suppose instead $n \geq 2$. Apply the division algorithm again such that $(n+2) = qn+r$. If $n = 2$ then $q = 2$ and $r = 0$, so $(n,n+2) = 2$ by Problem 8. Else, if $n \gt 2$, we have $q = 1$ and $r = 2$. Apply Lemma 3 again: $(n+2,n) = (n,2)$. This reduces the problem to the following: What values can $(n,2)$ take? This is straightforward - either $1$ or $2$. Since $(a,b) \geq 1$ for any integers, and $(a,b)$ cannot be greater than either of $a$ or $b$. It is straightfoward to show that if $n$ is even - that is, if $n$ is able to be expressed as an integer of the form $2k$ for integer $k$ - then $(n,n+2) = 2$. Else, if $n$ is odd - that is, $n = 2k+1$ for integer $k$ - then $(n,n+2) = 1$. </li>
+</ol>
+  
+<br>
+  
+<p> Exercise 11. </p>
+<ol style="a">
+  <li>Prove that $(k,n+k) = 1$ if and only if $(k,n)=1$.</li>
+  <li>Is it true that $(k,n+k)=d$ if and only if $(k,n)=d$?</li>
+</ol>
+  
 <br>
 <br>
 
