@@ -149,11 +149,18 @@
   <br>
   <p> Now, having shown that the square root of $2$ is not a rational number - that is, $p$ such that $p^2 = 2$ is not in $\mathbb{Q}$ - we can construct the bounded sets without supremum and infimum as described previously. Let $A$ be the set of all positive rationals $p$ such that $p^2 \lt 2$ and $B$ the set of all positive rationals such that $p^2 \gt 2$. First, we will show that $A$ contains no largest element and $B$ contains no smallest element. That is, for every $p \in A$, there is some $q \in A$ such that $p \lt q$; and similarly, for every $p \in A$, there is some $q$ such that $p \gt q$.</p>
   <p>Surprisingly, we can use the same construction of $q$ for both cases. For any rational $p$, define $q$ as follows:</p>
-  <p style="text-align: center;"> $ q = p - \frac{p^2 - 2}{p + 2} = \frac{2p+2}{p+2}</p>
+  <p style="text-align: center;"> $ q = p - \frac{p^2 - 2}{p + 2} = \frac{2p+2}{p+2} $ </p>
   <p> If we adopt this construction, we can derive the following expression to more readily check if $q^2$ is greater than or less than $2$:</p>
-  <p style="text-align: center;"> $ q^2 - 2 = \frac{2(p^2 - 2}{(p+2)^2}
+  <p style="text-align: center;"> $ q^2 - 2 = \frac{2(p^2 - 2}{(p+2)^2} $ </p>
   <p> Note that $q$ is itself rational. Now, suppose $p \in A$. Then $p^2 - 2 \lt 0$. This tells us that $q \gt p$ since we're subtracting a negative, and also that $q^2 - 2 \lt 0$. Therefore, $q \gt p$ and $q \in A$. Therefore, given any proposed maximal element in $A$, we can always construct a greater element.</p>
   <p> Next, suppose $p \in B$. Then $p^2 - 2 \gt 0$. This tells us that $q \lt p$ since we're subtracting a positive value, and also that $q^2-2 \gt 0$. Therefore, $q \lt p$ and $q \in B$. Therefore, given any proposed minimal element in $B$, we can always construct a lesser element. </p>
+  <p> Since the sets $A$ and $B$ have no maximal and minimal element, respectively. This rules out the most obvious candidates for a supremum of $A$ and an infimum of $B$. (It's a worthwhile to take a moment to convince yourself that, if a set has a maximal element, it is the supremum of the set by looking again at the definition.) But also, note that we don't have a supremum for $A$ or an infimum of $B$ outside those sets either! Consider the first one - a supremum for $A$. The entire collection of upper bounds of $A$ in $\mathbb{Q}$ is given by $B$. On the other hand, we previously showed $B$ has no least element, as we can always construct one smaller. Therefore, we cannot meet condition (ii) to find a supremum. Similarly, for $B$, we have plenty of lower bounds. Since $A$ was defined as being positive rationals, note that 0 and the negative rationals are all less than any element of $A$, so if there's an infimum for $B$, it must then be in $A$. But $A$ itself has no greatest element, and so we cannot find an infimum for $B$.</p>
+  <p> As a side note, we can say that $A$ does have an infimum, however. It should be apparent from the construction that $\inf A = 0$. Since $B$ is unbounded above, it does not have a supremum.</p>
+  <p> So what does this tell us? Well, it means in an informal sense that $\mathbb{Q}$ has "holes" in it. More formally, this is tied to the idea of a space or set being what we'd call "complete", which will be formally defined later, but specifically here we can say that $\mathbb{Q}$ does not have the <i>least upper bound</i> property. </p>
+
+  <br>
+
+  
   <p>Under construction</p>
 
   <br>
