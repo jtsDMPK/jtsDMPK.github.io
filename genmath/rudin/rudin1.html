@@ -131,7 +131,14 @@
   <p> Some other notational conveniences Rudin notes include the ability to write $y \gt x$ in the place of $x \lt y$, and that $x \leq y$ means either $x \lt y$ or $x = y$, making it the negation of $x \gt y$.</p>
   <p> Definition 1.6: An <i>ordered set</i> is a set $S$ in which an order is defined.</p>
   <p> Rudin has thus far used $\mathbb{Q}$ to indicate the rational numbers - those of the form $\frac{a}{b}$ for integers $a$ and $b$ - and suggesting their structure is not sufficient for our purposes, essentially foreshadowing the construction of the real numbers by pointing out the gaps in $\mathbb{Q}$. However, he does point out we can put the familiar order on $\mathbb{Q}$ by saying $r \lt s$ if and only if $s - r$ is a positive rational number.</p>
-
+  <p> Again, Rudin uses convention that is not as specific as some authors like. Mathematicians like to specify sets as either partially or totally ordered. Rudin here seems to be using ordered as synonymous with totally ordered, which is fine for consideration of the rational and real numbers, but not necessarily for order relations on things like sets or graphs.</p>
+  <p> Definition 1.7: Suppose $S$ is an ordered set and $E \subseteq S$. If there exists a $\beta \in S$ such that $x \leq \beta$ for every $x \in E$, we say that $E$ is <i>bounded above</i>, and call $\beta$ and <i>upper bound</i> of E.
+  <p> This can all be swapped for the equivalent definitions of <i>bounded below</i> and <i>lower bound</i> where $\beta \leq x$ for every $x \in E$. </p>
+  <p> Definition 1.8: Suppose $S$ is an (totally) ordered set, $E \subseteq S$, and $E$ is bounded above. Suppose further there exists some $\alpha \in S$ with the following properties:</p>
+  <ol type="i">
+    <li>$\alpha$ is an upper bound of $E$.</li>
+    <li>If $\gamma \lt \alpha$, then $\gamma$ is not a upper bound of $E$.</li>
+  <p> Then $\alpha$ is called the <i>least upper bound of $E$</i>, or the <i>supremum of $E$</i> and we may write $\alpha = \sup E$. Flipping signs as before, we may have the <i>greatest lower bound of $E$</i>, or the <i>infimum of $E$</i>, and write $\alpha = \inf E$.</p> 
   <p>Under construction</p>
 
   <br>
