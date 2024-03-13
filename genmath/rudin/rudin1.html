@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title> jtsDMPK: Dudley 1 </title>
+  <title> jtsDMPK: Rudin 1 </title>
   <style> /* Creates the background image, and sets it as static in the background with the scroll as opposed to repeating */
     body {
       background-image: url('../images/mathematics-3d-blender-illustration-xl-darkened.jpeg');
@@ -92,50 +92,71 @@
 </head>
   
 <body>
-<h1>Chapter 1: The Real and Complex Number System</h1>
+  <h1>Chapter 1: The Real and Complex Number System</h1>
+  
+  <br>
+  <br>
+  
+  <h3> Summary of Chapter </h3>
+  
+  <h4> Notational Conveniences</h4>
+  <p> Rudin has a few notational conveniences early on that are listed as definitions, but are really a mix of notation and definition. They are essentially as follows: </p>
+  <ol type="i">
+    <li>If $A$ is a set, $x \in A$ indicates $x$ is an element of $A$, and $x \not\in A$ indicates $x$ is not an element of $A$.</li>
+    <li>If a set has no elements, it is the <i>empty set</i>. If it has at least one element, it is <i>nonempty</i>. Rudin gives no special symbol for the empty set, but $\emptyset$ is common here.</li>
+    <li>If there are sets $A$ and $B$ with every element in $A$ as a member of $B$, then we say $A$ is a subset of $B$ and write $A \subset B$ (or $B \supset A$). (This notation seems to be falling out of favor - I will elaborate soon enough.)</li>
+    <li>If $A \subset B$ and there is an element of $B$ that is not an element of $A$, then we may say $A$ is a <i>proper subset</i> of $B$.</li>
+    <li>If $A \subset B$ and $B \subset A$, then $A$ and $B$ are equal with respect to set elements, and we write $A = B$. Otherwise, we write $A \ne B$.</li>
+  </ol>
+  <p> Note: Increasingly, some mathematicians see the use of $A \subset B$ to be ambiguous; some authors use it to indicate that $A$ is a strict subset of $B$ and use $A \subseteq B$ to indicate the possibility of set equality. Other mathematicians are opting for even more explicit notation for the strict subset case: $A \subsetneq B$. Anyone using this notation will generally use $A \subseteq B$ otherwise if $A$ is not necessarily a strict subset. To summarize:</p>
+  <ol>
+    <li> Convention 1: $A \subset B$ indicates the subset relation, and is agnostic as to whether or not this is strict. (Rudin) </li>
+    <li> Convention 2: $A \subset B$ indicates specifically a strict subset relation, and $A \subseteq B$ indicates otherwise. </li>
+    <li> Convention 3: $A \subsetneq B$ indicates specifically a strict subset relation, and $A \subseteq B$ indicates otherwise. </li>
+  </ol>
 
-<br>
-<br>
-
-<h3> Summary of Chapter </h3>
-
-<h4> Notational Conveniences</h4>
-<p> Rudin has a few notational conveniences early on that are listed as definitions, but are really a mix of notation and definition. They are essentially as follows: </p>
-<ol type="i">
-  <li>If $A$ is a set, $x \in A$ indicates $x$ is an element of $A$, and $x \not\in A$ indicates $x$ is not an element of $A$.</li>
-  <li>If a set has no elements, it is the <i>empty set</i>. If it has at least one element, it is <i>nonempty</i>. Rudin gives no special symbol for the empty set, but $\emptyset$ is common here.</li>
-  <li>If there are sets $A$ and $B$ with every element in $A$ as a member of $B$, then we say $A$ is a subset of $B$ and write $A \subset B$ (or $B \supset A$). (This notation seems to be falling out of favor - I will elaborate soon enough.)</li>
-  <li>If $A \subset B$ and there is an element of $B$ that is not an element of $A$, then we may say $A$ is a <i>proper subset</i> of $B$.</li>
-  <li>If $A \subset B$ and $B \subset A$, then $A$ and $B$ are equal with respect to set elements, and we write $A = B$. Otherwise, we write $A \ne B$.</li>
-</ol>
-<p> Note: Increasingly, some mathematicians see the use of $A \subset B$ to be ambiguous; some authors use it to indicate that $A$ is a strict subset of $B$ and use $A \subseteq B$ to indicate the possibility of set equality. Other mathematicians are opting for even more explicit notation for the strict subset case: $A \subsetneq B$. Anyone using this notation will generally use $A \subseteq B$ otherwise if $A$ is not necessarily a strict subset.</p>
-<p>Under construction</p>
+  <p> My personal preference is Convention 2, since having at least something to indicate strict set containment is handy for some proofs, but I feel like Convention 3 introduces clutter. Other mathematicians have other opinions, some quite strong. I will generally opt for Convention 2 just to have the notational convenience. </p>
 
   <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>  
-<h3>Image credits:</h3>
-<p>Background: Mathematics 3D Blender Illustration <br>
-  Credit:  <a href="https://pixabay.com/users/mastertux-470906/"> MasterTux </a> <br>
-  Source: <a href="https://creazilla.com/nodes/1670031-mathematics-3d-blender-illustration"> creazilla </a> <br>
-  License: <a href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0-1.0 </a> <br>
-  Modifications: Rotated and darkened </p>  
+  
+  <h4> Ordered Sets </h4>
+
+  <p> In this book and any other text in analysis and topology, set orderings are important structures. Specifically, they allow $ \lt $ and $ \gt $ to be defined as relations and used with all the power that entails. So here's how Rudin defines an order:</p>
+  <p> Definition 1.5: Let $S$ be a set. An <i>order</i> on $S$ is a relation, denoted by $ \lt $, with the following properties: </p>
+  <ol type="i">
+    <li>If $x \in S$ and $y \in S$, then one and only one of the following statements is true: $x \lt y$, $x = y$, or $y \lt x$. </li>
+    <li>Given $x, y, z \in S$, if $x \lt y$ and $y \lt z$, then $x \lt z$.</li>
+  </ol>
+  <p> The second property is one called <i>transitivity</i>, which we will see later.</p>
+  <p> Some other notational conveniences include the ability to write $y \gt x$ in the place of $x \lt y$, and that $x \leq y$ means either $x \lt y$ or $x = y$, making it the negation of $x \gt y$.</p>
+
+  <p>Under construction</p>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>  
+  <h3>Image credits:</h3>
+  <p>Background: Mathematics 3D Blender Illustration <br>
+    Credit:  <a href="https://pixabay.com/users/mastertux-470906/"> MasterTux </a> <br>
+    Source: <a href="https://creazilla.com/nodes/1670031-mathematics-3d-blender-illustration"> creazilla </a> <br>
+    License: <a href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0-1.0 </a> <br>
+    Modifications: Rotated and darkened </p>  
 </body>
 </html>
