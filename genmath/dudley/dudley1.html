@@ -332,14 +332,41 @@
   <li>Prove that $(k,n+k) = 1$ if and only if $(k,n)=1$.</li>
   <li>Is it true that $(k,n+k)=d$ if and only if $(k,n)=d$?</li>
 </ol>
-
-<br>
-  
 <p>Solution:</p>
 <ol type="a">
   <li><p>First, suppose $(k,n+k) = 1$. We seek to show $(k,n) = 1$. By theorem 3.5, there are integers $s$ and $t$ such that $ks+(n+k)t = 1$. But regrouping also shows us that $k(s+t)+nt=1$ - that is, $1$ is a linear combination of $n$ and $k$. By the other direction of theorem 3.5, this means that $(n,k) = 1$. </p>
     <p>Now, suppose $(n,k) = 1$. We seek to show $(k,n+k) = 1$. Again, apply theorem 3.5: $(n,k)=1$ implies there are integers $s$ and $t$ such that $ns+kt=1$. Rearrange to obtain </p>
   </li>
+</ol>
+
+<br>
+
+<p> Exercise 12. Prove: If $a \vert b$ and $c \vert d$, then $ac \vert bd$.</p>
+<p> Solution: By definition of divisibility, there are some integers $n$ and $m$ such that $an = b$ and $cm = d$. Then $ac(nm) = bd$, with integer $nm$, proving the statement.</p>
+
+<br>
+
+<p> Exercise 13. Prove: If $d \vert a$ and $d \vert b$, then $d^2 \vert ab$.</p>
+<p> Solution: This is exercise 12 in the special case of $a = c$.</p>
+
+<br>
+
+<p> Exercise 14. Prove: If $c \vert ab$ and $(c,a) = d$, then $c \vert db$.</p>
+<p> Solution: </p>
+
+<br>
+
+<p> Exercise 15.</p>
+  <ol type="a">
+    <li> If $x^2 + ax + b = 0$ has an integer root, show that it divides $b$.</li>
+    <li> If $x^2 + ax + b = 0$ has a rational root, show that it is in fact an integer.</li>
+  </ol>
+<p> Solution:</p>
+  <ol type="a">
+    <li> Let $r$ be an integer root of the polynomial given. Rearranging gives $r^2 + ar = -b$. We can rewrite this as $r(r+a) = -b$; since $r$ is a factor on the left hand side, it divides the right hand side as well. </li>
+    <li> Let $\frac{p}{q}$ be a rational root of the polynomial given, in least terms, so that $(p,q)=1$. Rearranging again gives $\frac{p^2}{q^2} + \frac{ap}{q} = -b$. Multiply left and right hand sides by $q^2$ and factor out $p$ from the left hand side:  $p(p + aq) = -bq^2$. Since $(p,q) = 1$, it must be the case that $p \vert b$ as above...</li>
+  </ol>
+
 <br>
 <br>
 
