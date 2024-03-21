@@ -133,7 +133,7 @@
   
   <h4> Definition: Divisibility </h4>
   <p> <b>Def.</b> We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
-  <p> We've reached our first definition of this section! Now note that what is being said here. If $a$ divides $b$, then some multiple of $a$ equals $b$. We might also call $a$ a <i>factor</i> of $b$, which will be more useful terminology in the later context of factorization. Note that $a$ can be negative! For example, $-2$ divides $4$ since $(-2)(-2) = 4$. Here, we'll stop and consider a few simple exercises about divisibility of integers.</p>
+  <p> We've reached our first definition of this section! Now note that what is being said here. If $a$ divides $b$, then some multiple of $a$ equals $b$. We might also call $a$ a <i>factor</i> of $b$, which will be more useful terminology in the later context of factorization. Note that $a$ can be negative! For example, $-2$ divides $4$ since $(-2)(-2) = 4$. As an additional bit of notation, if $a$ does <i>not</i> divide $b$, we may denote it as $a \nmid b$, using the common convention of introducing a strikethrough to indicate that something does not hold. Here, we'll stop and consider a few simple exercises about divisibility of integers.</p>
 
   
   <h4> Exercises on divisibility </h4>
@@ -143,78 +143,123 @@
   <div id="spoiler1" style="display:none" color="white"> 
     The numbers $\{ \pm 1, \pm 2, \pm 3, \pm 6 \}$ divide 6. Don't forget that negatives also divide integers!
   </div>
-  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler1') .style.display=='none') {document.getElementById('spoiler1') .style.display=''}else{document.getElementById('spoiler1') .style.display='none'}">Show/hide</button>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler1') .style.display=='none') {document.getElementById('spoiler1') .style.display=''}else{document.getElementById('spoiler1') .style.display='none'}">Show/Hide</button>
 
   <p> Exercise 1.2 Which integers divide 1? </p>
    <div id="spoiler2" style="display:none" color="white"> 
     Only 1 divides 1. To prove this, first note that $(1)(1)=1$. Now, suppose we have any integer $a \ne 1$. By observing that $1a = a$, we can see that the definition is not satisfied for any other integer. (Note: This property is why 1 is sometimes called the <i>multiplicative identity</i>.
   </div>
-  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'}">Show/hide</button>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'}">Show/Hide</button>
   
   <p> Exercise 1.3 Which integers divide zero? Can you provide a proof of this?</p>
   <div id="spoiler3" style="display:none" color="white"> 
     Every integer divides zero. Proof: By definition, $a$ divides $0$ if and only if there is some integer $d$ such that $ad = 0$. If $d=0$, then regardless of the integer $a$, $a0 = 0$. Therefore, all integers divide 0.
   </div> 
-  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'}">Show/hide</button>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'}">Show/Hide</button>
 
   <p> Exercise 1.4 Provide a proof or offer a counterexample if the statement is false: If $a \vert b$ and $b \vert c$, then $a \vert c$. </p>
 
     <div id="spoiler4" style="display:none" color="white"> 
     Claim: If $a \vert b$ and $b \vert c$, then $a \vert c$. Proof: Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$.
   </div> 
-  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler4') .style.display=='none') {document.getElementById('spoiler4') .style.display=''}else{document.getElementById('spoiler4') .style.display='none'}">Show/hide</button>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler4') .style.display=='none') {document.getElementById('spoiler4') .style.display=''}else{document.getElementById('spoiler4') .style.display='none'}">Show/Hide</button>
     
   <br>
   <br>
   
   <h4> Lemmata </h4>
-  <p> Lemma 1: The divisor of two numbers is a divisor of their sum. </p>
+  <p> A lemma (pl. lemmata) is a "small" result that is useful in proving a more important result later on. This means that what might be a lemma in one context might be a theorem in another! It's weird and confusing, but don't worry too much about the distinction. Use and experience build judgement as to what the "main" result. Here, since we're building up to the greatest common divisor, that these results are called lemmata suggest they will be useful for showing results related to the GCD.</p>
+  <br>
+  <p> <i>Lemma 1.1: The divisor of two numbers is also a divisor of their sum. </i></p>
   <p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b). </p>
   <p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
+  <p> Observe that the strategy here essentially requires taking two equations, summing them, and re-grouping the terms. This is a common strategy for proofs of this type, and it will be seen even more frequently later on. Also, note that the converse of this statement does not hold! As a example for why the converse fails, consider that $8+7 = 15$, and $3 \vert 15$ and $5 \vert 15$, but $3 \nmid 8$, $3 \nmid 7$, $5 \nmid 8$, and $3 \nmid 8$.</p>
   <br> 
-  <p> Lemma 2: The divisor of a collection of integers is a divisor of any linear combination of those integers. </p>
-  <p> Note: The text does not use this vocabulary in calling it a linear combination, but the recognition of this as such is very useful shorthand for more advanced topics. </p>
+  <p> <i>Lemma 1.2: The divisor of a collection of integers is a divisor of any linear combination of those integers. </i></p>
+  <p> Note: The text does not use this vocabulary in calling it a linear combination, but the recognition of this as such is very useful shorthand and is standard in other contexts. Essentially, it's stating that, given a collection of values, we can take any multiple of any particular element, and any sums of those subsequent multiples. The notation below might actually be clearer than the words. </p>
   <p> Statement: If $d \vert a_1$, $d \vert a_2$, $\dots$, $d \vert a_n$, then $d \vert (c_1 a_1 + c_2 a_2 + \cdots + c_n a_n)$ for any integers $c_1, c_2, \dots, c_n$. </p>
   <p> Proof: By definition, there are integers $q_1, q_2, \dots q_n$ such that $dq_1 = a_1$, $dq_2 = a_2$, $\dots$, $dq_n = a_n$. Therefore, $c_1a_1 + c_2a_2 + \cdots + c_na_n = d(c_1q_1 + c_2q_2 + \cdots + c_nq_n)$. By closure of integers under multiplication and addition, the term in the parentheses is itself an integer, proving the statement. </p>
-  <p> Note: This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties.</p>
+  <p> This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties. The exercise in Dudley on this example is totally worthwhile, but will not be replicated because I don't want copyright folks breathing down my neck for reproducing his text verbatim for each exercise and example.</p>
   
   <br>
   <br>
   
   <h4> Definition: Greatest Common Divisor </h4>
-  <p> Def. We say $d$ is the <b>greatest common divisor</b> (or <b>GCD</b>) of $a$ and $b$ if and only if </p>
+  <p> <b>Def.</b> We say $d$ is the <b>greatest common divisor</b> (or <b>GCD</b>) of $a$ and $b$ if and only if </p>
   <ol type="i">
     <li> $d \vert a$ and $d \vert b$, and </li>
     <li> if $c \vert a$ and $c \vert b$, then $c \leq d$. </li>
   </ol>
   <p> We may use the notation $d = (a, b)$ to denote this property.</p>
-  <p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic.</p>
-  <p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. This also means $(0,0)$ is undefined, since those sets are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that not both $a$ and $b$ are zero, and the greated common divisor is defined.</p>
+  <p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic. If we were talking about points on the Euclidean plane as well in other parts, we would absolutely need the more explicit notation.</p>
+  <p> Note 2: The existence of the GCD requires greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. It may be worth considering briefly that, subsequently, the largest value the GCD of $a$ and $b$ may take on is the value of the lesser magnitude. (Given an integer $a$, the magnitude of $a$ is the absolute value of $a$, or $\lvert a \rvert$. We need to specify this in case either of $a$ or $b$ are negative.) </p>
+  <p>This also means $(0,0)$ is undefined, since those sets of divisors are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that $a$ and $b$ are not both zero, and the greated common divisor is defined.</p>
   
   <br>
   <br>
     
   <h4> Exercises on simple properties of the GCD</h4>
   
-  <p> Exercise 5. What is $(n,1)$? What about $(n,0)$?</p>
-  <p> Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$.</p>
-  <p> Proof: For $(n,1)$, observe that the only factors of $1$ are $\pm 1$. Also note for any integer $n$, since $1$ is the multiplicative identity element in the integers, $n1 = n$, and therefore $1$ is a divisor of $n$. Since $1$ is the greatest divisor of $1$, and $1$ is also a divisor of $n$, this suffices to show $(n,1)=1$. To show $(n,0) = n$, it is sufficient to observe that for any $n$, the greatest divisor of it is $n$ itself; and further, all integers divide $0$.</p>
-  <p> Exercise 6. If $d$ is a positive integer, what is $(d,nd)$?</p>
-  <p> Aside: <a href="https://www.youtube.com/watch?v=QgOB7VWjlSQ&ab_channel=JMlovergurl">It's D&D!</a></p>
-  <p> Claim: For any positive integer $d$, $(d,nd) = d$.</p>
-  <p> Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$, $d \vert nd$. Therefore, $(d,nd)=d$.</p>
+  <p> Exercise 1.5. What is $(n,1)$? What about $(n,0)$?</p>
   
+  <div id="spoiler5" style="display:none" color="white"> 
+    Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$. Proof: For $(n,1)$, observe that the only factors of $1$ are $\pm 1$. Also note for any integer $n$, since $1$ is the multiplicative identity element in the integers, $n1 = n$, and therefore $1$ is a divisor of $n$. Since $1$ is the greatest divisor of $1$, and $1$ is also a divisor of $n$, this suffices to show $(n,1)=1$. To show $(n,0) = n$, it is sufficient to observe that for any $n$, the greatest divisor of it is $n$ itself; and further, all integers divide $0$.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler5') .style.display=='none') {document.getElementById('spoiler5') .style.display=''}else{document.getElementById('spoiler5') .style.display='none'}">Show/Hide</button>
+
+  <br>
+  
+  <p> Exercise 1.6. If $d$ is a positive integer, what is $(d,nd)$?</p>
+  <p> Aside: <a href="https://www.youtube.com/watch?v=QgOB7VWjlSQ&ab_channel=JMlovergurl">It's D&D!</a></p>
+
+  <div id="spoiler6" style="display:none" color="white"> 
+   Claim: For any positive integer $d$, $(d,nd) = d$. Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$, $d \vert nd$. Therefore, $(d,nd)=d$.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler6') .style.display=='none') {document.getElementById('spoiler6') .style.display=''}else{document.getElementById('spoiler6') .style.display='none'}">Show/Hide</button>
+
   <br>
   <br>
   
   <h4> Theorem: Dividing two numbers by their GCD gives a relatively prime pair</h4>
   <p> Note: The concept of primality, and of relative primes (co-primes) will be discussed more heavily in the next chapter, but using the term here explicitly serves to foreshadow the importance of this theorem. </p>
-  <p> Theorem 1. If $(a,b) = d$, then $\left(\frac{a}{d}, \frac{b}{d}\right) = 1$.</p>
+  <p> Theorem 1.1. If $(a,b) = d$, then $\left(\frac{a}{d}, \frac{b}{d}\right) = 1$.</p>
   <p> Note: The proof of this theorem uses a common strategy that is employed throughout math. It exploits the fact that if you can put a lower bound and an upper bound on a value, and those bounds are the same, then the result is that value. This strategy is often leveraged when you have inequalities available by other theorems or lemmata and definitions. The last step is explicitly stated here, but is generally omitted from proofs of this nature as apparent to the reader.</p>
   <p> Proof: Let $c = \left(\frac{a}{d}, \frac{b}{d}\right)$. First, we will show that $c /geq 1$. From exercise 5, we showed that $1$ divides any integer, so it is a lower bound on any GCD; therefore, $c \geq 1$. Next, we will show that $c \leq 1$. Since the GCD is $c$, $c \vert \frac{a}{d}$ and $c \vert \frac{b}{d}$. Specifically, there is a pair of integers, $q$ and $r$, such that $cq = \frac{a}{d}$ and $cr = \frac{b}{d}$. Rearranging these equalities gives us that $(cd)q = a$ and $(cd)r = b$. From this we see that $cd$ is a common divisor of both $a$ and $b$, and the product $cd$ cannot be greater than $d$ - else $d$ would not be the greatest common divisor. Since $d$ is positive, it follows then that $c \leq 1$. Having shown $c \geq 1$ and $c \leq 1$, we must conclude that $c = 1$.
   
   <br>
   <br>
+
+  <p> This is a reasonable place to stop and review what's been covered so far. We've gone over the definitions of divisibility and the greatest common divisor, and a few related results about how these behave structurally within the context of the integers. We've introduced the idea of relatively prime numbers, foreshadowing prime factor decomposition in a later lesson. In the next lesson, we'll be looking at integer division (with remainders) and the Euclidean algorithm for finding the GCD without enumerating lists of divisors.</p>
+
+  <br>
+  <br>
+
+  <h4> Additional Exercises </h4>
+  <br>
+  
+  <p> Exercise 1.7. Prove that if $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
+    <div id="spoiler7" style="display:none" color="white"> 
+   Solution: Suppose $a \vert b$ and $b \vert a$. Then there exists some integer $q$ such that $qa = b$, and there also exists some integer $r$ such that $a = rb$. Substitution of the first into the latter gives us $a = r(qa) = (rq)a$. Therefore, $rq=1$, and so either both $r=q=1$ or $r=q=-1$ since these are the only factors of 1. If $r=q=1$, then $a=b$; else, if $r=q=-1$, then $a = -b$.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler7') .style.display=='none') {document.getElementById('spoiler7') .style.display=''}else{document.getElementById('spoiler7') .style.display='none'}">Show/Hide</button>
+
+  <br>
+
+  <p> Exercise 1.8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
+  <div id="spoiler8" style="display:none" color="white"> 
+   Solution: Let $d=(a,b)$. By definition, $d \vert a$ and $d \vert b$, and $d$ is the maximal integer satisfying this condition. We know by hypothesis that $a \vert b$, and $a \vert a$ trivially. Since $a \gt 0$, its greatest divisor is $a$ itself; therefore, by the maximality condition, $d=a$.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler8') .style.display=='none') {document.getElementById('spoiler8') .style.display=''}else{document.getElementById('spoiler8') .style.display='none'}">Show/Hide</button>
+
+  <br>
+
+  <p> Problem 9. Prove that $((a,b),b) = (a,b)$.</p>
+  <div id="spoiler9" style="display:none" color="white"> 
+    Solution: Let $d = (a,b)$. Since $d \vert b$, and $d \gt 0$; therefore, by Exercise 1.8, $(d,b)=d$.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler9') .style.display=='none') {document.getElementById('spoiler9') .style.display=''}else{document.getElementById('spoiler9') .style.display='none'}">Show/Hide</button>
+  
+  
   
   <h4> Theorem: The Division Algorithm </h4>
   <p> Theorem 2. Given positive integers $a$ and $b$, $b \neq 0$, there exist unique integers $q$ and $r$, with $0 \leq r \lt b$ such that $a = bq + r$. </p>
@@ -327,15 +372,6 @@
   
   <br>
   
-  <p> Problem 7. If $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
-  <p> Solution: Suppose $a \vert b$ and $b \vert a$. Then there exists some integer $q$ such that $qa = b$, and there also exists some integer $r$ such that $a = rb$. Substitution of the first into the latter gives us $a = r(qa) = (rq)a$. Therefore, $rq=1$, and so either both $r=q=1$ or $r=q=-1$ since these are the only factors of 1. If $r=q=1$, then $a=b$; else, if $r=q=-1$, then $a = -b$.</p>
-  
-  <br>
-    
-  <p> Problem 8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
-  <p> Solution: Let $d=(a,b)$. By definition, $d \vert a$ and $d \vert b$, and $d$ is the maximal integer satisfying this condition. We know by hypothesis that $a \vert b$, and $a \vert a$ trivially. Since $a \gt 0$, its greatest divisor is $a$ itself; therefore, by the maximality condition, $d=a$.</p>
-  
-  <br>
   
   <p> Problem 9. Prove that $((a,b),b) = (a,b)$.</p>
   <p> Solution: Let $d = (a,b)$. Observe that $d \vert b$, and $d \gt 0$; therefore, by Exercise 8, $(d,b)=d$.</p>
