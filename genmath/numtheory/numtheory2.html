@@ -215,11 +215,6 @@
   <p> The problems provided at the end of the chapter are first a few calculation problems, followed by some more interesting abstract ones. Since I'm less interested in calculation, I'll reproduce a few of the later ones here:</p>
   <br>
   
-  <p> Problem 5. If $N = abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$. </p>
-  <p> Solution: Rearrange the equation as $N - a(bc) = 1$. This is a linear combination of $N$ and $a$, specifically as $(1)N + (-bc)a$. By Corollary 3.5.2, $N$ and $a$ are relatively prime, and $(N,a)=1$. Associativity of the term $abc$ is sufficient to show the argument also holds for $(N,b)$ and $(N,c)$.</p>
-  
-  <br>
-  
   
   <p>Problem 10. </p>
   <ol type="a">
@@ -267,6 +262,12 @@
       <li> Let $r$ be an integer root of the polynomial given. Rearranging gives $r^2 + ar = -b$. We can rewrite this as $r(r+a) = -b$; since $r$ is a factor on the left hand side, it divides the right hand side as well. </li>
       <li> Let $\frac{p}{q}$ be a rational root of the polynomial given, in least terms, so that $(p,q)=1$. Rearranging again gives $\frac{p^2}{q^2} + \frac{ap}{q} = -b$. Multiply left and right hand sides by $q^2$ and factor out $p$ from the left hand side:  $p(p + aq) = -bq^2$. Since $(p,q) = 1$, it must be the case that $p \vert b$ as above...</li>
     </ol>
+    <div id="spoiler12" style="display:none" color="white"> 
+   Solution: Let $d = (N,a). Rearrange the sum given above instead as $N - a(bc) = 1$. Since $d \vert N$ and $d \vert a$, it follows that $d \vert 1$ as well. Therefore, $d = 1$. An identical argument, with appropriate grouping, suffices to show the result for $(N,b)$ and $(N,c)$ as well.
+  </div>
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler12') .style.display=='none') {document.getElementById('spoiler12') .style.display=''}else{document.getElementById('spoiler12') .style.display='none'}">Show/Hide</button>
+  
+  
 
   
   <p>Under construction</p>
