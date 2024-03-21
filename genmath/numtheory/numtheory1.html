@@ -105,13 +105,16 @@
   <br>
   <br>
 
-  <h4> The integers </h4>
+  <h4> The integers, $\mathbb{Z}$ </h4>
   <p> <i>The integers consist of the positive natural numbers, their negatives, and zero.</i></p>
-  <p> This means we're considering the entire collection of $\{1, 2, 3,\dots\}$ (the positive natural numbers), $0$, the additive identity, and their additive inverses, $\{-1, -2, -3, \dots\}$, to create a set $\{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}$.</p>
+  <p> This means we're considering the entire collection of $\{1, 2, 3,\dots\}$ (the positive natural numbers), $0$, the additive identity, and their additive inverses, $\{-1, -2, -3, \dots\}$, to create a set $\{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}$. Note that by specifying the positive natural numbers, I am making no hard stance here on the apparently contentuous issue as to whether the natural numbers include zero! (Zero is neither positive nor negative - or, if you prefer, it is unsigned.) Do not wade into these debates, for each person generally uses whichever definition is most convenient for their own purposes. If you're in a field where you need to index starting at zero frequently, you might as well say it's in the naturals; if you're in a field where you index more frequently starting at one, you're more likely to start the naturals at one! It's that simple.</p>
+
+  <br>
+  <br>
 
   <h4> Closure of integers under addition, subtration, and multiplication </h4>
   <p> <i>The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</i></p>
-  <p> This property is not explicitly stated in Dudley's text, but would likely be stated in a more abstract text, and it is an implicit observation that can sometimes be tkaen for granted. </p>
+  <p> This property is not explicitly stated in Dudley's text, but would likely be stated in a more abstract text, and it is an implicit observation that can sometimes be tkaen for granted. It also serves to introduce us to the main operations we'll be seeing in this context, as these are the operations that play nicely with integers. Note that division specifically does not work this way - or rather, we would say that the integers are not closed under division. The numbers $-1$ and $2$ are both integers, but $-\frac{1}{2}$ is not. Incorporating division into the integers requires you take the entire field of the rational numbers. And yes, field has a specific definition, particular to abstract algebra.</p>
 
   <br>
   <br>
@@ -127,13 +130,17 @@
   
   <h4> Definition: Divisibility </h4>
   <p> Def. We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
-  <p> </p>
+  <p> We've reached the key definition of this section! </p>
   <br>
   <br>
   
   <h4> Exercises on simple properties of divisibility </h4>
   
   <p> Exercise 1. Which integers divide zero? </p>
+  <div id="spoiler" style="display:none"> 
+  HIDDEN CONTENT HERE 
+  </div> 
+  <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}">Show/hide</button>
   <p> Claim: Every integer divides zero. </p>
   <p> Proof: By definition, if $a$ divides $0$, then there is some integer $d$ such that $ad = 0$. If $d = 0$, then $a0 = 0$ for any integer $a$. Therefore, all integers divide $0$. </p>
   <br>
