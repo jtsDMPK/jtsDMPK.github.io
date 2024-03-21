@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title> jtsDMPK: NumTheo 1</title>
+  <title> jtsDMPK: NumTheo 2</title>
   <style> /* Creates the background image, and sets it as static in the background with the scroll as opposed to repeating */
     body {
       background-image: url('../images/mathematics-3d-blender-illustration-xl-darkened.jpeg');
@@ -95,6 +95,9 @@
 </head>
   
 <body>
+  <a href="numtheory1.html" class="previous">&laquo; Previous Lesson</a>
+  <a href="numtheory3.html" class="next">Next Lesson;</a>
+
   <h1>Lesson 2: The Division and Euclidean Algorithms</h1>
   
   <br>
@@ -102,19 +105,19 @@
   
   <h3> Summary of Lesson </h3>
   
-  <p> If you remember the the greatest common divisor (GCD) from elementary education, congrats! You're doing well so far. Where this treatment differs is to consider divisibility properties and the GCD as more abstract properties. Though this is still in the context of the integers (because it's introductory number theory, after all), the focus will be more on the structural properties of numbers more generally and how to prove these properties rather than simply calculating the GCD of a collection of numbers - though we will eventually get to that! The goal here is to build up a more generalized toolset and see how mathematical reasoning generally works in a setting with more comfortable objects and concepts. First, we will cover some general properties of integers and collections of integers that will be useful for proving subsequent statements later on. Note that we are not going to construct the integers through set-theoretic definitions, because that's a matter well beyond the scope of this treatment. It's often useful in mathematics to actually start in familiar territory - in this case, the familiar setting integers - take some known properties for granted, work out some details, and then come back later to backfill details. Think of the integers here as to math as "middle-sized dry goods" are to physics - the physics student often starts off with classical mechanics well before going to considering forces at the atomic level. </p>
-  <p> As to the structure of this page, it will often be the case that the subheading will be a summary of a property, definition, or theorem, followed by a full statement. After that will be commentary that is hopefully useful for understanding context of the statement, making reference to Dudley's text, or what material one might see elsewhere. This structure is chosen to make it easy to scan through the page to find a desired result by scrolling past headers, while also providing more conversational addenda in paragraph form following.</p>
+  <p> The <a href="https://en.wikipedia.org/wiki/Division_algorithm"> division algorithm </a> and the <a href="https://en.wikipedia.org/wiki/Euclidean_algorithm" Euclidean algorithm </a> are two of the oldest results in modern use. The former gives us existence and uniqueness of quotients and remainders for positive integer division, and the latter establishes a method to obtain the greatest common divisor of two integers through repeated application of the division algorithm. Though there exist much more sophisticated and faster algorithms in terms of computational steps for reaching the same ends, these two are straightfoward and the basis upon which improvements are compared. </p>
+  <p>Since we built up a sufficient base to prove the division algorithm in the previous lesson, we open with its statement and proof.</p>
   
   <br>
   <br>
 
     
   <h4> Theorem: The Division Algorithm </h4>
-  <p> Theorem 2. Given positive integers $a$ and $b$, $b \neq 0$, there exist unique integers $q$ and $r$, with $0 \leq r \lt b$ such that $a = bq + r$. </p>
-  <p> Note 1: It is standard practice when stating this theorem to use $q$ and $r$ since they denote, respectively, a quotient and a remainder.
-  <p> Note 2: This is one of the most powerful, and oldest, results about integer division, and is the longest proof encountered thus far in the text, especially because it posits existence and uniqueness. In the rational numbers or even the real numbers, divisibility works without remainders. </p>
+  <p> <b>Theorem 2.1.</b> Given positive integers $a$ and $b$, $b \neq 0$, there exist unique integers $q$ and $r$, with $0 \leq r \lt b$ such that $a = bq + r$. </p>
+  <p> Note 1: It is standard practice when stating this theorem to use $q$ and $r$ since they denote, respectively, a quotient and a remainder. </p>
+  <p> Note 2: This is what's called an "existence and uniqueness" proof. The strategy thus requires two steps - to show that the values desired exist, and that the result is a unique one. Uniqueness is shown generally by positing there are two solutions and deriving that they must be equal through some means or another. It's a standard strategy, and one you should study carefully for understanding mathematical proof structures.</p>
   <p> Proof: Since $a$ and $b$ are both positive integers, consider the set of non-negative integers given by $ \{ a, a-b, a-2b, \dots \}$. It's bounded below by $0$, and so contains a least element by the least integer principle. Call that value $a-qb$. Note that $a-(q+1)b \lt 0$ by this construction, so $q$ is in fact the greatest multiple of $b$ that can be subracted from $a$. Now let $r = a-bq$. This gives us both of $q$ and $r$, so this suffices to show the existence of $q$ and $r$ such that $a= bq + r$.</p>
-  <p> Next, we need to show uniqueness. The strategy here is to posit a second candidate pair, and show that they are the same as the originally desired values.</p>
+  <p> Next, we need to show uniqueness. As previously described, the strategy here is to posit a second candidate pair, and show that they are the same as the originally desired values.</p>
   <p> Suppose then that there exist values $q'$ and $r'$ also satisfying the conditions; that is, suppose $a = bq+r = bq'+r'$, with $0 \leq r \lt b$ and $0 \leq r' \lt b$. By subtraction, we have $0 = b(q-q')+(r-r')$. Since $b$ divides both $0$ and $b(q-q')$, it must divide the other term, by Lemma 1: $b \vert (r-r')$. But by the previous inequalities on $r$ and $r'$, it must be the case that $-b \lt r-r' \lt b$, and the only multiple of $b$ between $-b$ and $b$ is $0$. Therefore, $r-r'=0$, establishing that $r=r'$. Since the remainders are the same, the fact that $0 = b(q-q')+(r-r')$ means that $q-q'=0$ as well. This suffices to establish uniqueness of $q$ and $r$, and completes the proof of the Euclidean division algorithm.</p>
   
   <br>
