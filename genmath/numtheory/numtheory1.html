@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> jtsDMPK: NumTheo 1</title>
+  <style> /* Creates the background image, and sets it as static in the background with the scroll as opposed to repeating */
+    body {
+      background-image: url('../images/mathematics-3d-blender-illustration-xl-darkened.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+
+  <style> /* Creates a text-box object as an option for controlling what's behind text */
+    #text-box { 
+      width: 600px; 
+      height: 200px; 
+      border: 2px solid #000;  
+      padding: 10px;  
+      background-color: #EDEDED;
+    } 
+  </style>
+
+  <style> /* Sets the text color in the elements specified. Here, to white. */
+    p { 
+      color : #FFFFFF;
+    }
+    h1 { 
+      color : #FFFFFF;
+    }
+    h2 {
+      color : #FFFFFF;
+    }
+    h3 {
+      color : #FFFFFF;
+    }
+    h4 {
+      color : #FFFFFF;
+    }
+    ol {
+      color : #FFFFFF;
+    }
+  </style>
+  
+  <style> /* Sets the color options for links to something other than the defaults. */
+    a:link {
+      color: Aqua;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: CornflowerBlue;
+      background-color: transparent;
+      text-decoration: none;
+    }
+  </style>
+
+  <style> /* Sets options for the table elements, especially border properties. */
+    table {
+      border-collapse: collapse;
+    }
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    tr { 
+      border: solid;
+      border-width: 2px White;
+      border-color: White;
+    }
+    td {
+      border-right: solid 2px White;
+      border-left: solid 2px White;
+      text-align: center;
+      vertical-align: bottom;
+    }
+  </style>
+
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']]
+      }
+    };
+  </script>
+
+</head>
+  
+<body>
+  <h1>Lesson 1: Divisibility and the Greatest Common Divisor</h1>
+  
+  <br>
+  <br>
+  
+  <h3> Summary of Lesson </h3>
+  
+  <p> If you remember the the greatest common divisor (GCD) from elementary education, congrats! You're doing well so far. Where this treatment differs is to consider divisibility properties and the GCD as more abstract properties. Though this is still in the context of the integers (because it's introductory number theory, after all), the focus will be more on the structural properties of numbers more generally and how to prove these properties rather than simply calculating the GCD of a collection of numbers - though we will eventually get to that! The goal here is to build up a more generalized toolset and see how mathematical reasoning generally works in a setting with more comfortable objects and concepts. First, we will cover some general properties of integers and collections of integers that will be useful for proving subsequent statements later on. Note that we are not going to construct the integers through set-theoretic definitions, because that's a matter well beyond the scope of this treatment. It's often useful in mathematics to actually start in familiar territory - in this case, the familiar setting integers - take some known properties for granted, work out some details, and then come back later to backfill details. Think of the integers here as to math as "middle-sized dry goods" are to physics - the physics student often starts off with classical mechanics well before going to considering forces at the atomic level. </p>
+  <p> As to the structure of this page, it will often be the case that the subheading will be a summary of a property, definition, or theorem, followed by a full statement. After that will be commentary that is hopefully useful for understanding context of the statement, making reference to Dudley's text, or what material one might see elsewhere. This structure is chosen to make it easy to scan through the page to find a desired result by scrolling past headers, while also providing more conversational addenda in paragraph form following.</p>
+  
+  <br>
+  <br>
+
+  <h4> The integers </h4>
+  <p> <i>The integers consist of the positive natural numbers, their negatives, and zero.</i></p>
+  <p> This means we're considering the entire collection of $\{1, 2, 3,\dots\}$ (the positive natural numbers), $0$, the additive identity, and their additive inverses, $\{-1, -2, -3, \dots\}$, to create a set $\{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}$.</p>
+
+  <h4> Closure of integers under addition, subtration, and multiplication </h4>
+  <p> <i>The sum of two integers is itself an integer; the difference of two integers is itself an integer; and the product of two integers is itself an integer.</i></p>
+  <p> This property is not explicitly stated in Dudley's text, but would likely be stated in a more abstract text, and it is an implicit observation that can sometimes be tkaen for granted. </p>
+
+  <br>
+  <br>
+    
+  <h4> Least/Greatest Integer Property </h4>
+  <p> <i>A nonempty set of integers that is bounded below/above contains a least/greatest element, respectively.</i></p>
+  <p> This is, in other texts, often called the <b>well-ordering principle</b>, and there is a non-negligble chance I may accidentally use that terminology instead. This boundedness property tells us another very useful thing: a set of integers that is bounded above and below both must be finite. Hopefully you can convince yourself of it. A more advanced setting might actually prove both of these properties of the integers, but 
+  <p> Note: A more advanced (advanced undergraduate or above) text might prove this starting from a construction of the integers, but this is <i>not</i> that text. It is simply stated as an observation at the beginning, as the reader is assumed to be familiar with the integers. This observation does not become relevant until we get to the greatest common divisor.</p>
+  
+  
+  <br>
+  <br>
+  
+  <h4> Definition: Divisibility </h4>
+  <p> Def. We say that $a$ <b>divides</b> $b$ if and only if there is an integer $d$ (here, divisor) such that $ad = b$. We write this as $a \vert b$. </p>
+  <p> </p>
+  <br>
+  <br>
+  
+  <h4> Exercises on simple properties of divisibility </h4>
+  
+  <p> Exercise 1. Which integers divide zero? </p>
+  <p> Claim: Every integer divides zero. </p>
+  <p> Proof: By definition, if $a$ divides $0$, then there is some integer $d$ such that $ad = 0$. If $d = 0$, then $a0 = 0$ for any integer $a$. Therefore, all integers divide $0$. </p>
+  <br>
+  <p> Exercise 2. If $a \vert b$ and $b \vert c$, then does $a \vert c$? </p>
+  <p> Claim: If $a \vert b$ and $b \vert c$, then $a \vert c$.
+  <p> Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$. </p>
+    
+  <br>
+  <br>
+  
+  <h4> Lemmata </h4>
+  <p> Lemma 1: The divisor of two numbers is a divisor of their sum. </p>
+  <p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b). </p>
+  <p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
+  <br> 
+  <p> Lemma 2: The divisor of a collection of integers is a divisor of any linear combination of those integers. </p>
+  <p> Note: The text does not use this vocabulary in calling it a linear combination, but the recognition of this as such is very useful shorthand for more advanced topics. </p>
+  <p> Statement: If $d \vert a_1$, $d \vert a_2$, $\dots$, $d \vert a_n$, then $d \vert (c_1 a_1 + c_2 a_2 + \cdots + c_n a_n)$ for any integers $c_1, c_2, \dots, c_n$. </p>
+  <p> Proof: By definition, there are integers $q_1, q_2, \dots q_n$ such that $dq_1 = a_1$, $dq_2 = a_2$, $\dots$, $dq_n = a_n$. Therefore, $c_1a_1 + c_2a_2 + \cdots + c_na_n = d(c_1q_1 + c_2q_2 + \cdots + c_nq_n)$. By closure of integers under multiplication and addition, the term in the parentheses is itself an integer, proving the statement. </p>
+  <p> Note: This is one of the earliest results that gives way to some practical(ish) calculations: what cash values are impossible with a fixed number of coins? The trick is to set up two linear equations, take the difference, and exploit divisibility properties.</p>
+  
+  <br>
+  <br>
+  
+  <h4> Definition: Greatest Common Divisor </h4>
+  <p> Def. We say $d$ is the <b>greatest common divisor</b> (or <b>GCD</b>) of $a$ and $b$ if and only if </p>
+  <ol type="i">
+    <li> $d \vert a$ and $d \vert b$, and </li>
+    <li> if $c \vert a$ and $c \vert b$, then $c \leq d$. </li>
+  </ol>
+  <p> We may use the notation $d = (a, b)$ to denote this property.</p>
+  <p> Note 1: The parenthesis notation is common if you're restricting your writing to number theory and divisibility, but it is also common to see $d = gcd(a,b)$ as well - and this is strongly prefered if there is any chance of confusion with the notation for ordered pairs. Here, $(a,b)$ is fine because of the very restricted topic.</p>
+  <p> Note 2: The definition here makes use of the greatest integer property. As long as $a$ and $b$ are not both $0$ (recall: all integers divide $0$), then the set of divisors is bounded above by the greatest of these two integers and their negatives (and below by the least of those four). The collection of divisors is therefore finite, and contains a greatest element, which is what part (ii) does - picks out that element. This also means $(0,0)$ is undefined, since those sets are unbounded. Going foward in proofs and exercises, we will generally assume an arbitrary $(a,b)$ is such that not both $a$ and $b$ are zero, and the greated common divisor is defined.</p>
+  
+  <br>
+  <br>
+    
+  <h4> Exercises on simple properties of the GCD</h4>
+  
+  <p> Exercise 5. What is $(n,1)$? What about $(n,0)$?</p>
+  <p> Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$.</p>
+  <p> Proof: For $(n,1)$, observe that the only factors of $1$ are $\pm 1$. Also note for any integer $n$, since $1$ is the multiplicative identity element in the integers, $n1 = n$, and therefore $1$ is a divisor of $n$. Since $1$ is the greatest divisor of $1$, and $1$ is also a divisor of $n$, this suffices to show $(n,1)=1$. To show $(n,0) = n$, it is sufficient to observe that for any $n$, the greatest divisor of it is $n$ itself; and further, all integers divide $0$.</p>
+  <p> Exercise 6. If $d$ is a positive integer, what is $(d,nd)$?</p>
+  <p> Aside: <a href="https://www.youtube.com/watch?v=QgOB7VWjlSQ&ab_channel=JMlovergurl">It's D&D!</a></p>
+  <p> Claim: For any positive integer $d$, $(d,nd) = d$.</p>
+  <p> Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$, $d \vert nd$. Therefore, $(d,nd)=d$.</p>
+  
+  <br>
+  <br>
+  
+  <h4> Theorem: Dividing two numbers by their GCD gives a relatively prime pair</h4>
+  <p> Note: The concept of primality, and of relative primes (co-primes) will be discussed more heavily in the next chapter, but using the term here explicitly serves to foreshadow the importance of this theorem. </p>
+  <p> Theorem 1. If $(a,b) = d$, then $\left(\frac{a}{d}, \frac{b}{d}\right) = 1$.</p>
+  <p> Note: The proof of this theorem uses a common strategy that is employed throughout math. It exploits the fact that if you can put a lower bound and an upper bound on a value, and those bounds are the same, then the result is that value. This strategy is often leveraged when you have inequalities available by other theorems or lemmata and definitions. The last step is explicitly stated here, but is generally omitted from proofs of this nature as apparent to the reader.</p>
+  <p> Proof: Let $c = \left(\frac{a}{d}, \frac{b}{d}\right)$. First, we will show that $c /geq 1$. From exercise 5, we showed that $1$ divides any integer, so it is a lower bound on any GCD; therefore, $c \geq 1$. Next, we will show that $c \leq 1$. Since the GCD is $c$, $c \vert \frac{a}{d}$ and $c \vert \frac{b}{d}$. Specifically, there is a pair of integers, $q$ and $r$, such that $cq = \frac{a}{d}$ and $cr = \frac{b}{d}$. Rearranging these equalities gives us that $(cd)q = a$ and $(cd)r = b$. From this we see that $cd$ is a common divisor of both $a$ and $b$, and the product $cd$ cannot be greater than $d$ - else $d$ would not be the greatest common divisor. Since $d$ is positive, it follows then that $c \leq 1$. Having shown $c \geq 1$ and $c \leq 1$, we must conclude that $c = 1$.
+  
+  <br>
+  <br>
+  
+  <h4> Theorem: The Division Algorithm </h4>
+  <p> Theorem 2. Given positive integers $a$ and $b$, $b \neq 0$, there exist unique integers $q$ and $r$, with $0 \leq r \lt b$ such that $a = bq + r$. </p>
+  <p> Note 1: It is standard practice when stating this theorem to use $q$ and $r$ since they denote, respectively, a quotient and a remainder.
+  <p> Note 2: This is one of the most powerful, and oldest, results about integer division, and is the longest proof encountered thus far in the text, especially because it posits existence and uniqueness. In the rational numbers or even the real numbers, divisibility works without remainders. </p>
+  <p> Proof: Since $a$ and $b$ are both positive integers, consider the set of non-negative integers given by $ \{ a, a-b, a-2b, \dots \}$. It's bounded below by $0$, and so contains a least element by the least integer principle. Call that value $a-qb$. Note that $a-(q+1)b \lt 0$ by this construction, so $q$ is in fact the greatest multiple of $b$ that can be subracted from $a$. Now let $r = a-bq$. This gives us both of $q$ and $r$, so this suffices to show the existence of $q$ and $r$ such that $a= bq + r$.</p>
+  <p> Next, we need to show uniqueness. The strategy here is to posit a second candidate pair, and show that they are the same as the originally desired values.</p>
+  <p> Suppose then that there exist values $q'$ and $r'$ also satisfying the conditions; that is, suppose $a = bq+r = bq'+r'$, with $0 \leq r \lt b$ and $0 \leq r' \lt b$. By subtraction, we have $0 = b(q-q')+(r-r')$. Since $b$ divides both $0$ and $b(q-q')$, it must divide the other term, by Lemma 1: $b \vert (r-r')$. But by the previous inequalities on $r$ and $r'$, it must be the case that $-b \lt r-r' \lt b$, and the only multiple of $b$ between $-b$ and $b$ is $0$. Therefore, $r-r'=0$, establishing that $r=r'$. Since the remainders are the same, the fact that $0 = b(q-q')+(r-r')$ means that $q-q'=0$ as well. This suffices to establish uniqueness of $q$ and $r$, and completes the proof of the Euclidean division algorithm.</p>
+  
+  <br>
+  <br>
+  
+  <h4> Lemma </h4>
+  <p> Lemma 3. If $a = bq + r$, then $(a,b)=(b,r)$.
+  <p> Proof: First, we seek to show that, given $(a,b)$, it follows that the value of $(b,r)$ is the same. Let $d = (a,b)$. By Lemma 1, if $d \vert a$ and $d \vert b$ and $a = bq+r$, then $d \vert r$. Now we seek to show that $d$ is the greatest common divisor of $b$ and $r$ - suppose that $c$ is any common divisor of $b$ and $r$. By Lemma 1 again, it follows that $c$ divides $a$ as well, and so $c$ is a divisor of both $a$ and $b$. Since $c$ and $d$ are both divisors of $a$ and $b$, it follows that $c \leq d$. This suffices to show that $d = (b,r)$. </p>
+  <p> Note: We could have easily started from $d = (b,r)$ and gone the other way just as readily, and it might be helpful to convince yourself of this. </p>
+  
+  <br>
+  <br>
+  
+  <h4> Theorem: The Euclidean Algorithm </h4>
+  <p> Theorem 3. Given positive integers $a$ and $b$, $b \neq 0$, we may compute the value of $(a,b)$ by repeated application of the Division Algorithm in the following way: </p>
+   <table style="color: #FFFFFF;">
+    <tr>
+      <th> $a = bq_0 + r_0$ </th>
+      <th> $0 \leq r \lt b$ </th>
+    </tr>
+    <tr>
+      <th> $b = rq_1 + r_1$ </th>
+      <th> $0 \leq r_1 \lt r$ </th>
+    </tr>
+    <tr>
+      <th> $r = r_1q_2 + r_2$ </th>
+      <th> $0 \leq r_2 \lt r_1$ </th>
+    </tr>
+    <tr>
+      <th> $\vdots$ </th>
+      <th> $\vdots$ </th>
+    </tr>
+    <tr>
+      <th> $r_k = r_{k+1} q_{k+2} + r_{k+2}$ </th>
+      <th> $0 \leq r_{k+2} \lt r_{k+1}$ </th>
+    </tr>
+  </table> 
+  <p> Specifically, for sufficiently large $k$, say $k = t$, we have $ r_{t-1} = $r_t q_{t+1} $, and subsequently, $(a,b)=r_t$. </p>
+  <p> Proof: First, observe that the sequence of non-negative integers given by $ \{ b, r, r_1, \dots, \} $ is strictly decreasing by the division algorithm, and is bounded below by zero. Therefore, it has a final element before the remainders reach $0$. Let the first $0$ element be $ r_{t+1} $. Then $r_{t-1} = r_t q_{t+1} $, noting that $r_t$ divides both sides. Now, apply Lemma 3 repeatedly to the sequence of equalities given by the division algorithm, working back up the chart.</p>
+  <p> This repeated application of Lemma 3 tells us that $r_t = (r_{t-1}, r{t}) = \cdots = (b,r) = (a,b)$, and completes the proof. </p>
+  <p> Note: If either of $a$ and $b$ are negative, you may want to convince yourself that $(a,b) = (\pm a, \pm b)$ and see that the proof follows just the same.</p>
+  
+  <br>
+  <br>
+  
+  <h4> Theorem: Every linear combination of two values is a multiple of their GCD, and vice versa. </h4>
+  <p> Note: This is not given in the text by Dudley, but is a very nice proof to see and shortcuts the subsequent theorem. Therefore we will call it Theorem 3.5. As the proof has several moving parts, I don't fault Dudley for skipping it in a text of this level. However, it gives two immediate corollaries that are themselves very powerful. </p>
+  <p> Theorem 3.5: Let $d = (a,b)$ for positive integers $a$ and $b$. Then for all integers of the form $as+bt$, with integers $s$ and $t$, there exists some $n$ such that $nd = as+bt$. Hence, every linear combination of $a$ and $b$ is a multiple of $(a,b)$, and vice versa - every multiple of $(a,b)$ is a linear combination of $a$ and $b$.</p>
+  <p> Proof: Suppose $x$ is a linear combination of $a$ and $b$ - that is, $x = as+bt$. We want to show that $x$ is also some multiple of $(a,b)$. Since $d = (a,b)$, we know that there are some values $f$ and $g$ such that $a = fd$ and $b = gd$. Substitute these values into the original expression for $x$ and we see that $x = d(fs+gd)$, with the expression in parenthesis as an integer. Therefore, $d$ divides $x$, and so there is some $n$ such that $nd = x$.</p>
+  <p> Now we go the opposite direction: Suppose we have a multiple of $(a,b)$ expressible in the form $nd$. We seek to show it can be expressed as a linear combination of $a$ and $b$ of the form $as+bt$. To demonstrate this, we must consider the entire class of integers generated by linear combinations of $a$ and $b$.</p>
+  <p> Let's restrict our consideration of integers of the form $as+bt$ such that $as+bt \gt 0$ - that is, only the positive elements. It's clearly nonempty (consider $s=0$, $t=1$ or vice-versa), and bounded below (by $0$), so it must have a least element by the least integer property. Let's call that least integer $e$. Then $e = as' + bt'$ for some particular integers $s'$ and $t'$. We already know that $a$ and $b$ themselves of this form, so $e \leq a$ and $e \leq b$. </p>
+  <p> Start with considering the fact that $e \leq a$. Now, by the division algorithm, we can write $a = eq + r$ for some integers $q$ and $r$, with $0 \leq r \lt e$. If $r \gt 0$,then we have the following: </p>
+  <p style="text-align: center;"> $r = a - eq = a - (as'+bt')q = a(1-s'q)+b(-t'q) $</p>
+  <p> This means $r$ is also a linear combination of $a$ and $b$. But the division algorithm also specifies $0 \leq r \lt e$. If that first inequality is strict and $r \gt 0$, this contradicts the minimality of $e$, so it must be the case that $r = 0$. This means that $a = eq$, so $e \vert a$. </p>
+  <p> Next, consider that $e \leq b$. By an identical argument, we can also see that $e \vert b$, and conclude that $e$ is a common divisor of $a$ and $b$. </p>
+  <p> Having established that $e$ is a common divisor of $a$ and $b$, we now must show it's the <i>greatest</i> common divisor. So suppose we have some common divisor, $f$ of $a$ and $b$. Since $f \vert a$ and $f \vert b$, $f \vert (ax+by)$ for any integers $x$ and $y$ - and specifically, $f \vert (as'+bt')$. And since $as'+bt' = e$, $f \vert e$ - and so $f \leq e$. Since $e$ is itself a common divisor of $a$ and $b$, and any arbitrary common divisor $f$ is not greater than $e$, this means $e$ must be the greatest common divisor. It then follows that $d = e$.</p>
+  <p> Since we've established that $d$ is able to be expressed as a linear combination of $a$ and $b$, we can obtain any multiple of $d$, $nd$, by simply multiplying through by $n$ - that is, if $d = as'+ bt'$, then $nd = ans'+ bnt'$. This suffices to show that any multiple of $d = (a,b)$ is able to be expressed as a linear combination of $a$ and $b$. </p>
+  
+  <br>
+  <br>
+  
+  <h4> Corollary: The GCD of two values is the least positive integer able to be expressed as a linear combination those values</h4>
+  <p> Corollary 3.5.1: The greatest common divisor of two nonzero integers $a$ and $b$ is the smallest positive integer among all their linear combinations. That is, for all integers $s$ and $t$, $(a,b)$ is the smallest positive element of the integers described by $as+bt$.</p>
+  <p> This fact was shown directly in the preceding proof as part of the demonstration that any multiple of $(a,b)$ is expressible in the form $as+bt$.</p>
+  
+  <br>
+  <br> 
+    
+  <p> Corollary: Two values are coprime if and only if some linear combination of them equals $1$.</p>
+  <p> Corollary 3.5.2: Given nonzero values $a$ and $b$, $(a,b) = 1$ if and only if there exist integers $s$ and $t$ such that $as + bt = 1$.</p>
+  <p> Proof of corollary: First, suppose $(a,b)=1$. The existence of such $s$ and $t$ follows immediately from theorem 3.5. Next, suppose there exist $s$ and $t$ such that $as + bt = 1$. By corollary 3.5.1, $(a,b)$ is the least positive integer able to be expressed of the form $as+bt$, and there are no positive integers less than 1. Therefore, it must be the case that $(a,b) = 1$.</p> 
+  
+  <br>
+  <br>
+  
+  <h4> Theorem & corollaries on linear combinations </h4>
+  <p> What follows is now the trajectory given by Dudley in his text. Given we have a bit of a sledgehammer from the previous theorem and corollaries, these should be pretty easy to convince yourself of as stated by Dudley.</p>
+  <p> Theorem 4: If $(a,b)=d$, then there are integers $x$ and $y$ such that $ax+by = d$.
+  <p> Proof: By theorem 3.5, all multiples of $d=(a,b)$ can be expressed as a linear combination of $a$ and $b$. Notably, $d$ is a multiple of itself, with $n=1$.</p>
+  <p> Note: Dudley says this can be proved simply by working the Euclidean algorithm backward. This is substantially what is done in the proof of Theorem 3.5.</p>
+  <br>
+  <p> Corollary 4.1: If $d \vert ab$ and $(d,a)=1$, then $d \vert b$.</p>
+  <p> Proof: As $d$ and $a$ are relatively prime, there are integers $s$ and $t$ such that $ds + at = 1$. Multiply both sides of this by $b$ to obtain</p>
+  <p style="text-align: center;"> $d(bs)+(ab)t = b $</p>
+  <p> By hypothesis, $d \vert (ab)$, and clearly $d$ divides $d(bs)$ as well, so it follows that $d$ divides the left hand side of this equation. Therefore, $d$ must also divide the right hand side: $b$.</p>
+  <p> Note: It is worth convincing yourself that this doesn't work if we remove the condition on $d$ and $a$ being relatively prime. Consider trying it with a few. </p>
+  <br>
+  <p> Corollary 4.2: Let $(a,b)=d$, and suppose that $c\vert a$ and $c \vert b$. Then $c \vert d$. </p>
+  <p> Proof: We actually showed this in the proof of Theorem 3.5. </p>
+  <br>
+  <p> Corollary 4.3: If $a \vert m$, $b \vert m$, and $(a,b) = 1$, then $ab \vert m$.</p>
+  <p> Proof: Since $b$ divides $m$, there is some integer $q$ such that $m = bq$. And since $a$ divides $m$ as well, $a \vert bq$. Since $a$ and $b$ are relatively prime, then Corollary 4.1 tells us that $a \vert q$. Therefore, there's some integer $r$ such that $q = ar$. Substituting through again, we see that $m = bq = bar$. Therefore, $ab \vert m$. </p>
+  
+  <br>
+  <br>
+  
+  <h4> Problems </h4>
+  <p> The problems provided at the end of the chapter are first a few calculation problems, followed by some more interesting abstract ones. Since I'm less interested in calculation, I'll reproduce a few of the later ones here:</p>
+  <br>
+  
+  <p> Problem 5. If $N = abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$. </p>
+  <p> Solution: Rearrange the equation as $N - a(bc) = 1$. This is a linear combination of $N$ and $a$, specifically as $(1)N + (-bc)a$. By Corollary 3.5.2, $N$ and $a$ are relatively prime, and $(N,a)=1$. Associativity of the term $abc$ is sufficient to show the argument also holds for $(N,b)$ and $(N,c)$.</p>
+  
+  <br>
+  
+  <p> Problem 7. If $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
+  <p> Solution: Suppose $a \vert b$ and $b \vert a$. Then there exists some integer $q$ such that $qa = b$, and there also exists some integer $r$ such that $a = rb$. Substitution of the first into the latter gives us $a = r(qa) = (rq)a$. Therefore, $rq=1$, and so either both $r=q=1$ or $r=q=-1$ since these are the only factors of 1. If $r=q=1$, then $a=b$; else, if $r=q=-1$, then $a = -b$.</p>
+  
+  <br>
+    
+  <p> Problem 8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
+  <p> Solution: Let $d=(a,b)$. By definition, $d \vert a$ and $d \vert b$, and $d$ is the maximal integer satisfying this condition. We know by hypothesis that $a \vert b$, and $a \vert a$ trivially. Since $a \gt 0$, its greatest divisor is $a$ itself; therefore, by the maximality condition, $d=a$.</p>
+  
+  <br>
+  
+  <p> Problem 9. Prove that $((a,b),b) = (a,b)$.</p>
+  <p> Solution: Let $d = (a,b)$. Observe that $d \vert b$, and $d \gt 0$; therefore, by Exercise 8, $(d,b)=d$.</p>
+  
+  <br> 
+  
+  <p>Problem 10. </p>
+  <ol type="a">
+    <li>Prove that $(n,n+1)=1$ for all $n \gt 0$.</li>
+    <li>If $n \gt 0$, what can $(n,n+2)$ be?</li>
+  </ol>
+  <p> Solution: </p>
+  <ol type="a">
+    <li>Since $n \gt 0$ by hypothesis, both $n$ and $n+1$ are positive. First, consider the case where $n=1$. If so, exercise 5 applies, and we are done. Otherwise, apply the division algorithm and see that $(n+1)=qn+r$. Since $n \gt 1$, it must be the case that $q = 1$ and $r = 1$. Now apply Lemma 3: $(n+1,n) = (n,1) = 1$, applying exercise 5 again on the second expression.</li>
+    <li>Suppose we have instead $(n,n+2)$. As above, if $n = 1$, we have $(n,n+2) = 1$. Suppose instead $n \geq 2$. Apply the division algorithm again such that $(n+2) = qn+r$. If $n = 2$ then $q = 2$ and $r = 0$, so $(n,n+2) = 2$ by Problem 8. Else, if $n \gt 2$, we have $q = 1$ and $r = 2$. Apply Lemma 3 again: $(n+2,n) = (n,2)$. This reduces the problem to the following: What values can $(n,2)$ take? This is straightforward - either $1$ or $2$. Since $(a,b) \geq 1$ for any integers, and $(a,b)$ cannot be greater than either of $a$ or $b$. It is straightfoward to show that if $n$ is even - that is, if $n$ is able to be expressed as an integer of the form $2k$ for integer $k$ - then $(n,n+2) = 2$. Else, if $n$ is odd - that is, $n = 2k+1$ for integer $k$ - then $(n,n+2) = 1$. </li>
+  </ol>
+    
+  <br>
+    
+  <p> Exercise 11. </p>
+  <ol type="a">
+    <li>Prove that $(k,n+k) = 1$ if and only if $(k,n)=1$.</li>
+    <li>Is it true that $(k,n+k)=d$ if and only if $(k,n)=d$?</li>
+  </ol>
+  <p>Solution:</p>
+  <ol type="a">
+    <li><p>First, suppose $(k,n+k) = 1$. We seek to show $(k,n) = 1$. By theorem 3.5, there are integers $s$ and $t$ such that $ks+(n+k)t = 1$. But regrouping also shows us that $k(s+t)+nt=1$ - that is, $1$ is a linear combination of $n$ and $k$. By the other direction of theorem 3.5, this means that $(n,k) = 1$. </p>
+      <p>Now, suppose $(n,k) = 1$. We seek to show $(k,n+k) = 1$. Again, apply theorem 3.5: $(n,k)=1$ implies there are integers $s$ and $t$ such that $ns+kt=1$. Rearrange to obtain </p>
+    </li>
+  </ol>
+  
+  <br>
+  
+  <p> Exercise 12. Prove: If $a \vert b$ and $c \vert d$, then $ac \vert bd$.</p>
+  <p> Solution: By definition of divisibility, there are some integers $n$ and $m$ such that $an = b$ and $cm = d$. Then $ac(nm) = bd$, with integer $nm$, proving the statement.</p>
+  
+  <br>
+  
+  <p> Exercise 13. Prove: If $d \vert a$ and $d \vert b$, then $d^2 \vert ab$.</p>
+  <p> Solution: This is exercise 12 in the special case of $a = c$.</p>
+  
+  <br>
+  
+  <p> Exercise 14. Prove: If $c \vert ab$ and $(c,a) = d$, then $c \vert db$.</p>
+  <p> Solution: </p>
+  
+  <br>
+  
+  <p> Exercise 15.</p>
+    <ol type="a">
+      <li> If $x^2 + ax + b = 0$ has an integer root, show that it divides $b$.</li>
+      <li> If $x^2 + ax + b = 0$ has a rational root, show that it is in fact an integer.</li>
+    </ol>
+  <p> Solution:</p>
+    <ol type="a">
+      <li> Let $r$ be an integer root of the polynomial given. Rearranging gives $r^2 + ar = -b$. We can rewrite this as $r(r+a) = -b$; since $r$ is a factor on the left hand side, it divides the right hand side as well. </li>
+      <li> Let $\frac{p}{q}$ be a rational root of the polynomial given, in least terms, so that $(p,q)=1$. Rearranging again gives $\frac{p^2}{q^2} + \frac{ap}{q} = -b$. Multiply left and right hand sides by $q^2$ and factor out $p$ from the left hand side:  $p(p + aq) = -bq^2$. Since $(p,q) = 1$, it must be the case that $p \vert b$ as above...</li>
+    </ol>
+  
+  <br>
+  <br>
+  
+  <p>Under construction</p>
+  
+    <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>  
+  <h3>Image credits:</h3>
+  <p>Background: Mathematics 3D Blender Illustration <br>
+    Credit:  <a href="https://pixabay.com/users/mastertux-470906/"> MasterTux </a> <br>
+    Source: <a href="https://creazilla.com/nodes/1670031-mathematics-3d-blender-illustration"> creazilla </a> <br>
+    License: <a href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0-1.0 </a> <br>
+    Modifications: Rotated and darkened </p>  
+</body>
+</html>
