@@ -24,25 +24,25 @@
 
   <style> /* Sets the text color in the elements specified. Here, to white. */
     p { 
-      color : #D3D3D3;
+      color : #BEBEBE;
     }
     h1 { 
       color : #BEBEBE;
     }
     h2 {
-      color : #E4E4E4;
+      color : #BEBEBE;
     }
     h3 {
-      color : #E4E4E4;
+      color : #BEBEBE;
     }
     h4 {
-      color : #E4E4E4;
+      color : #BEBEBE;
     }
     ol {
-      color : #E4E4E4;
+      color : #BEBEBE;
     }
     div {
-      color : #E4E4E4;
+      color : #BEBEBE;
     }
   </style>
   
@@ -144,26 +144,26 @@
 
   <p> Exercise 1.1: Which integers divide 6? </p>
 
-    <div id="spoiler1" style="display:none" color="E4E4E4"> 
+    <div id="spoiler1" style="display:none" color="gray"> 
       Solution: The numbers $\{ \pm 1, \pm 2, \pm 3, \pm 6 \}$ divide 6. Don't forget that negatives also divide integers!
     </div>
     <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler1') .style.display=='none') {document.getElementById('spoiler1') .style.display=''}else{document.getElementById('spoiler1') .style.display='none'}">Show/Hide Solution</button>
   </p>
   <p> Exercise 1.2 Which integers divide 1? </p>
-   <div id="spoiler2" style="display:none" color="#E4E4E4"> 
+   <div id="spoiler2" style="display:none" color="gray"> 
     Only 1 divides 1. To prove this, first note that $(1)(1)=1$. Now, suppose we have any integer $a \ne 1$. By observing that $1a = a$, we can see that the definition is not satisfied for any other integer. (Note: This property is why 1 is sometimes called the <i>multiplicative identity</i>.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'}">Show/Hide Solution</button>
   
   <p> Exercise 1.3 Which integers divide zero? Can you provide a proof of this?</p>
-  <div id="spoiler3" style="display:none" color="white"> 
+  <div id="spoiler3" style="display:none" color="gray"> 
     Every integer divides zero. Proof: By definition, $a$ divides $0$ if and only if there is some integer $d$ such that $ad = 0$. If $d=0$, then regardless of the integer $a$, $a0 = 0$. Therefore, all integers divide 0.
   </div> 
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'}">Show/Hide Solution</button>
 
   <p> Exercise 1.4 Provide a proof or offer a counterexample if the statement is false: If $a \vert b$ and $b \vert c$, then $a \vert c$. </p>
 
-    <div id="spoiler4" style="display:none" color="white"> 
+    <div id="spoiler4" style="display:none" color="gray"> 
     Claim: If $a \vert b$ and $b \vert c$, then $a \vert c$. Proof: Since $a \vert b$, there is some integer $d_1$ such that $ad_1 = b$. And since $b \vert c$, there is some integer $d_2$ such that $bd_2 = c$. By substituting, we obtain the expression $ad_1d_2 = c$, and since the product of two integers is itself an integer, let $d = d_1d_2$ and we see $ad = c$ - or $a \vert c$.
   </div> 
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler4') .style.display=='none') {document.getElementById('spoiler4') .style.display=''}else{document.getElementById('spoiler4') .style.display='none'}">Show/Hide Solution</button>
@@ -175,7 +175,7 @@
   <p> A lemma (pl. lemmata) is a "small" result that is useful in proving a more important result later on. This means that what might be a lemma in one context might be a theorem in another! It's weird and confusing, but don't worry too much about the distinction. Use and experience build judgement as to what the "main" result. Here, since we're building up to the greatest common divisor, that these results are called lemmata suggest they will be useful for showing results related to the GCD.</p>
   <br>
   <p> <i>Lemma 1.1.</i> The divisor of two numbers is also a divisor of their sum. </p>
-  <p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b). </p>
+  <p> Statement: If $d \vert a$ and $d \vert b$, then $d \vert (a+b)$. </p>
   <p> Proof: By definition, there are integers $f$ and $g$ such that $df = a$ and $dg = b$. Therefore, $d(f+g) = (a+b)$. Since $f$ and $g$ are integers, $(f+g)$ is an integer by closure, and so $d \vert (a+b)$. </p>
   <p> Observe that the strategy here essentially requires taking two equations, summing them, and re-grouping the terms. This is a common strategy for proofs of this type, and it will be seen even more frequently later on. Also, note that the converse of this statement does not hold! As a example for why the converse fails, consider that $8+7 = 15$, and $3 \vert 15$ and $5 \vert 15$, but $3 \nmid 8$, $3 \nmid 7$, $5 \nmid 8$, and $3 \nmid 8$.</p>
   <br> 
@@ -206,7 +206,7 @@
   
   <p> Exercise 1.5. What is $(n,1)$? What about $(n,0)$?</p>
   
-  <div id="spoiler5" style="display:none" color="white"> 
+  <div id="spoiler5" style="display:none" color="gray"> 
     Claim: For any integer $n$, $(n,1) = 1$ and $(n,0) = 0$. Proof: For $(n,1)$, observe that the only factors of $1$ are $\pm 1$. Also note for any integer $n$, since $1$ is the multiplicative identity element in the integers, $n1 = n$, and therefore $1$ is a divisor of $n$. Since $1$ is the greatest divisor of $1$, and $1$ is also a divisor of $n$, this suffices to show $(n,1)=1$. To show $(n,0) = n$, it is sufficient to observe that for any $n$, the greatest divisor of it is $n$ itself; and further, all integers divide $0$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler5') .style.display=='none') {document.getElementById('spoiler5') .style.display=''}else{document.getElementById('spoiler5') .style.display='none'}">Show/Hide Solution</button>
@@ -216,7 +216,7 @@
   <p> Exercise 1.6. If $d$ is a positive integer, what is $(d,nd)$?</p>
   <p> Aside: <a href="https://www.youtube.com/watch?v=QgOB7VWjlSQ&ab_channel=JMlovergurl">It's D&D!</a></p>
 
-  <div id="spoiler6" style="display:none" color="white"> 
+  <div id="spoiler6" style="display:none" color="gray"> 
    Claim: For any positive integer $d$, $(d,nd) = d$. Proof: Observe that $d$ is the greatest divisor of itself; also, since $nd$ is a linear combination on $d$ (applying Lemma 1.2), $d \vert nd$. Therefore, $(d,nd)=d$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler6') .style.display=='none') {document.getElementById('spoiler6') .style.display=''}else{document.getElementById('spoiler6') .style.display='none'}">Show/Hide Solution</button>
@@ -242,7 +242,7 @@
   <br>
   
   <p> Exercise 1.7. Prove that if $a \vert b$ and $b \vert a$, then $a = b$ or $a = -b$.</p>
-    <div id="spoiler7" style="display:none" color="white"> 
+    <div id="spoiler7" style="display:none" color="gray"> 
    Solution: Suppose $a \vert b$ and $b \vert a$. Then there exists some integer $q$ such that $qa = b$, and there also exists some integer $r$ such that $a = rb$. Substitution of the first into the latter gives us $a = r(qa) = (rq)a$. Therefore, $rq=1$, and so either both $r=q=1$ or $r=q=-1$ since these are the only factors of 1. If $r=q=1$, then $a=b$; else, if $r=q=-1$, then $a = -b$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler7') .style.display=='none') {document.getElementById('spoiler7') .style.display=''}else{document.getElementById('spoiler7') .style.display='none'}">Show/Hide Solution</button>
@@ -250,7 +250,7 @@
   <br>
 
   <p> Exercise 1.8. Prove that if $a \vert b$ and $a \gt 0$, then $(a,b) = a$.</p>
-  <div id="spoiler8" style="display:none" color="white"> 
+  <div id="spoiler8" style="display:none" color="gray"> 
    Solution: Let $d=(a,b)$. By definition, $d \vert a$ and $d \vert b$, and $d$ is the maximal integer satisfying this condition. We know by hypothesis that $a \vert b$, and $a \vert a$ trivially. Since $a \gt 0$, its greatest divisor is $a$ itself; therefore, by the maximality condition, $d=a$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler8') .style.display=='none') {document.getElementById('spoiler8') .style.display=''}else{document.getElementById('spoiler8') .style.display='none'}">Show/Hide Solution</button>
@@ -258,7 +258,7 @@
   <br>
 
   <p> Exercise 1.9. Prove that $((a,b),b) = (a,b)$.</p>
-  <div id="spoiler9" style="display:none" color="white"> 
+  <div id="spoiler9" style="display:none" color="gray"> 
     Solution: Let $d = (a,b)$. Since $d \vert b$, and $d \gt 0$; therefore, by Exercise 1.8, $(d,b)=d$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler9') .style.display=='none') {document.getElementById('spoiler9') .style.display=''}else{document.getElementById('spoiler9') .style.display='none'}">Show/Hide Solution</button>
@@ -266,7 +266,7 @@
   <br>
     
   <p> Exercise 1.10. Prove: If $a \vert b$ and $c \vert d$, then $ac \vert bd$.</p>
-  <div id="spoiler10" style="display:none" color="white"> 
+  <div id="spoiler10" style="display:none" color="gray"> 
    Solution: By definition of divisibility, there are some integers $n$ and $m$ such that $an = b$ and $cm = d$. Then $ac(nm) = bd$, with integer $nm$, proving the statement.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler10') .style.display=='none') {document.getElementById('spoiler10') .style.display=''}else{document.getElementById('spoiler10') .style.display='none'}">Show/Hide Solution</button>
@@ -274,7 +274,7 @@
   <br>
 
   <p> Exercise 1.11. Prove: If $d \vert a$ and $d \vert b$, then $d^2 \vert ab$.</p>
-  <div id="spoiler11" style="display:none" color="white"> 
+  <div id="spoiler11" style="display:none" color="gray"> 
    Solution: This is a special case of Exercise 1.10, where $a = c$.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler11') .style.display=='none') {document.getElementById('spoiler11') .style.display=''}else{document.getElementById('spoiler11') .style.display='none'}">Show/Hide Solution</button>
@@ -282,7 +282,7 @@
   <br>
 
   <p> Exercise 12. If $N = abc+1$, prove that $(N,a)=(N,b)=(N,c)=1$. </p>
-  <div id="spoiler12" style="display:none" color="white"> 
+  <div id="spoiler12" style="display:none" color="gray"> 
    Solution: Let $d = (N,a)$. Rearrange the sum given above instead as $N - a(bc) = 1$. Since $d \vert N$ and $d \vert a$, it follows that $d \vert 1$ as well. Therefore, $d = 1$. An identical argument, with appropriate grouping, suffices to show the result for $(N,b)$ and $(N,c)$ as well.
   </div>
   <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler12') .style.display=='none') {document.getElementById('spoiler12') .style.display=''}else{document.getElementById('spoiler12') .style.display='none'}">Show/Hide Solution</button>
