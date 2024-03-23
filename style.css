@@ -1,0 +1,53 @@
+
+p { 
+  color : #BEBEBE;
+}
+h1 { 
+  color : #BEBEBE;
+}
+h2 {
+  color : #BEBEBE;
+}
+h3 {
+  color : #BEBEBE;
+}
+h4 {
+  color : #BEBEBE;
+}
+ol {
+  color : #BEBEBE;
+}
+div {
+  color : #BEBEBE;
+}
+
+a:link {
+  color: Aqua;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: CornflowerBlue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+tr { 
+  border: solid;
+  border-width: 2px Gray;
+  border-color: Gray;
+}
+td {
+  border-right: solid 2px Gray;
+  border-left: solid 2px Gray;
+  text-align: center;
+  vertical-align: bottom;
+}
