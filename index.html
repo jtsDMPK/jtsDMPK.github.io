@@ -1,185 +1,328 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
-<head>
-  
-  <title> 
-    jtsDMPK: home
-  </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> jtsDMPK: home </title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    
+    <body class="index">
+        <!-- Intro -->
+        <div class="content-wrapper">
+            <div class="content-bg">
+                <h1>jtsDMPK</h1>
+                <h2>Biomathematician and Research Scientist</h2>
+                <p>With over a decade of experience in biomedical research, I've worked in a variety of contexts from wet lab bench science to biostatistics consultation to, most recently, biomathematical modeling. Though I've worked on projects in many fields, quantitative pharmacology and circadian rhythms are two fields I've devoted a particular amount of time to.</p>
+                <p>Consider checking out the <a href="aboutme.html">About Me</a> section for a look at my résumé or CV, or browse through the other pages for some information about projects I've worked on in the past or just things I find neat. Thanks!</p>
+                
 
-  <link rel="stylesheet" href="indexstyles.css">
-  <link rel="stylesheet" href="indexbackground.css">
+                <section class="subpage-list">
+                    <div>
+                        <img src="images/flat-lay-notebook-with-list-desk.jpg" alt="A notebook laying open on a table.">
+                        <p> <a href="aboutme.html">About Me</a> </p>
+                    </div>
+                    <div>
+                        <img src="images/Sir-model-wikiversity.png" alt="Graph of an SIR model without demography, showing movement of the three compartments over time.">
+                        <p> <a href="appliedmath.html"> Applied Math </a></p>
+                    </div>
+                    <div> 
+                        <img src="images/telescope-at-dusk.jpg" alt="Telescopes at dusk.">
+                        <p> <a href="science.html"> Science</a> </p>
+                    </div>
+                    <div>
+                        <img src="images/Diagram_for_the_First_Isomorphism_Theorem.png" alt="Diagram of the First Isomorphism Theorem, showing the diamong pattern of group isomorphisms.">
+                        <p> <a href="puremath.html"> Pure Math </a> </p>
+                    </div>
+                    <div>
+                        <img src="images/more-arcade-games.jpg" alt="Arcade machines in a row in a room.">
+                        <p> <a href="recreation.html"> Recreation </a> </p>
+                    </div>
+                    <div>
+                        <img src="images/book-stacks.jpg" alt="Short stacks of books laid on a table.">
+                        <p> <a href="resources.html"> Resources </a></p>
+                    </div>
+                </section>
+            <!-- 
+                <table>
+                <tr>
+                    <td><img src="images/HIV-infected_T_cell_(6813384933).jpg" alt="HIV-infected T cell" height="256" width="256"> 
+                    <p><a href="mathviro/mathviro.html">Mathematical Virology</a></p>
+                    </td>
+                    <td>
+                    <img src="images/Pharmacokinetics_and_Pharmacodynamics.svg" height="256" width="200" alt="Pharmacokinetics - the distribution of drug in a body; and pharmacodynamics - the activity of the drug in a body">
+                    <p><a href="pharmaco/pharmaco.html">Pharmacometrics & Pharmacology</a></p>
+                    </td>
+                    <td>
+                    <img src="images/Sir-model-wikiversity.png" alt="Graph of an SIR model without demography" height="168" width="224">
+                    <p><a href="mathepi/mathepi.html">Mathematical Epidemiology</a></p>
+                    </td>
+                    <td>
+                    <img src="images/Diagram_for_the_First_Isomorphism_Theorem.png" alt="Diagram of the First Isomorphism Theorem" height="256" width="200">
+                    <p><a href="genmath/genmath.html">General and Recreational Mathematics</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <img src="images/telescope-at-dusk.jpg" alt="Telescopes at dusk" height="155" width="256">
+                    <p><a href="amateursci/amateursci.html">Amateur Science</a>
+                    </td>
+                    <td>
+                    <img src="images/partner-acro.jpg" alt="Partner acrobatics" height="256" width="256">
+                    <p><a href="circus/circus.html">Circus Arts</a></p>
+                    </td>
+                    <td>
+                    <img src="images/flower_cross_stitch.JPG" alt="Flower cross stitch" height="222" width="156">
+                    <p><a href="crafts/crafts.html">Arts & Crafts</a></p>
+                    </td>
+                    <td>
+                    <img src="images/john-dee-symbol.jpg" alt="John Dee's alchemical symbol" height="256" width="123">
+                    <p><a href="esoterica/esoterica.html">Folklore & Esoterica</a></p>
+                    </td>
+                </tr>  
+                <tr>
+                    <td>
+                    <img src="images/podcasting-mic-on-shock-mount.jpg" alt="Podcasting mic on a shock mount" height="160" width="240">
+                    <p><a href="podcasts/podcasts.html">Podcasts & Vlogs</a></p>
+                    </td>
+                    <td>
+                    <img src="images/open-book-heart.jpg" alt="Fantasy book" height="171" width="256">
+                    <p><a href="books/books.html">Books</a></p>
+                    </td>
+                    <td>
+                    <img src="images/colorful-music.jpg" alt="Colorful music" height="163" width="260">
+                    <p><a href="music/music.html">Music</a></p>
+                    </td>
+                    <td>
+                    <img src="images/more-arcade-games.jpg" alt="More arcade games" height="179" width="256">
+                    <p><a href="games/games.html">Games</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <img src="images/travel trailer.jpg" alt="Travel Trailer" height="180" width="256">
+                    <p><a href="travel/travel.html">Trips and Travels</a></p>
+                    </td>
+                </tr>
+                </table>
 
-</head>
-  
-<body>
 
-<h1>Welcome!</h1>
-<p>I'm a biomathematician in the Lexington, KY area with a wide array of professional and recreational interests. This site is a way for me to share some of those interests, as well as some tools and small tutorials I've developed over time, and provide links to resources.</p>
-<p>You might be asking what the site and handle - jtsDMPK - is. It might look like a nonsense string like xkcd, but it's not! The first three letters are actually my initials, and the remainder is one of the many acronyms used in the biopharm world. DMPK is short for "drug metabolism and pharmacokinetics" - essentially, a discipline for studying how drugs interact with metabolic processes and what happens with their concentration over time after taking them. It has not escaped my attention that, lacking vowels, slamming it together with my initials creates something that looks like a nonsense string, so I've taken to using it as a moniker for a while now.</p>
-  
-<table>
-  <tr>
-    <td><img src="images/HIV-infected_T_cell_(6813384933).jpg" alt="HIV-infected T cell" height="256" width="256"> 
-      <p><a href="mathviro/mathviro.html">Mathematical Virology</a></p>
-    </td>
-    <td>
-      <img src="images/Pharmacokinetics_and_Pharmacodynamics.svg" height="256" width="200" alt="Pharmacokinetics - the distribution of drug in a body; and pharmacodynamics - the activity of the drug in a body">
-      <p><a href="pharmaco/pharmaco.html">Pharmacometrics & Pharmacology</a></p>
-    </td>
-    <td>
-      <img src="images/Sir-model-wikiversity.png" alt="Graph of an SIR model without demography" height="168" width="224">
-      <p><a href="mathepi/mathepi.html">Mathematical Epidemiology</a></p>
-    </td>
-    <td>
-      <img src="images/Diagram_for_the_First_Isomorphism_Theorem.png" alt="Diagram of the First Isomorphism Theorem" height="256" width="200">
-      <p><a href="genmath/genmath.html">General and Recreational Mathematics</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="images/telescope-at-dusk.jpg" alt="Telescopes at dusk" height="155" width="256">
-      <p><a href="amateursci/amateursci.html">Amateur Science</a>
-    </td>
-    <td>
-      <img src="images/partner-acro.jpg" alt="Partner acrobatics" height="256" width="256">
-      <p><a href="circus/circus.html">Circus Arts</a></p>
-    </td>
-    <td>
-      <img src="images/flower_cross_stitch.JPG" alt="Flower cross stitch" height="222" width="156">
-      <p><a href="crafts/crafts.html">Arts & Crafts</a></p>
-    </td>
-    <td>
-      <img src="images/john-dee-symbol.jpg" alt="John Dee's alchemical symbol" height="256" width="123">
-      <p><a href="esoterica/esoterica.html">Folklore & Esoterica</a></p>
-    </td>
-  </tr>  
-  <tr>
-    <td>
-      <img src="images/podcasting-mic-on-shock-mount.jpg" alt="Podcasting mic on a shock mount" height="160" width="240">
-      <p><a href="podcasts/podcasts.html">Podcasts & Vlogs</a></p>
-    </td>
-    <td>
-      <img src="images/open-book-heart.jpg" alt="Fantasy book" height="171" width="256">
-      <p><a href="books/books.html">Books</a></p>
-    </td>
-    <td>
-      <img src="images/colorful-music.jpg" alt="Colorful music" height="163" width="260">
-      <p><a href="music/music.html">Music</a></p>
-    </td>
-    <td>
-      <img src="images/more-arcade-games.jpg" alt="More arcade games" height="179" width="256">
-      <p><a href="games/games.html">Games</a></p>
-    </td>
-  </tr>
-</table>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>  
+                <h3>Image credits:</h3>
+                <footer class="image-attribution">
+                    <small>
+                        Background image: 
+                        <cite>
+                            <a href="https://www.pexels.com/photo/moon-and-stars-813269/" target="_blank" rel="noopener">
+                                Moon and Stars
+                            </a>
+                        </cite>
+                        by Min An &mdash; 
+                        <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Pexels License</a>
+                    </small>
+                </footer>
+                
+                <table>
+                <tr>
+                <td>
+                    <p>Scanning electromicrograph of an HIV-infected T cell <br>
+                    Credit: NIAID <br> 
+                    Source: <a href="https://www.flickr.com/photos/niaid/6813396647/in/photolist-bo5rrZ"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/2.0/deed.en"> CC-By-2.0 </a> </p>
+                </td>
+                <td>
+                    <p>Pharmacokinetics and Pharmacodynamics <br>
+                    Credit: Scivit <br>
+                    Source: <a href="https://commons.wikimedia.org/wiki/File:Pharmacokinetics_and_Pharmacodynamics.svg"> Wikimedia </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/4.0/deed.en"> CC-By-4.0 </a></p> 
+                </td>
+                <td>
+                    <p>SIR model without vital dynamics <br>
+                    Credit: Engelbert Niehaus <br>
+                    Source: <a href="https://commons.wikimedia.org/wiki/File:Sir-model-wikiversity.png"> Wikimedia </a> <br>
+                    License: <a href="https://creativecommons.org/publicdomain/zero/4.0/deed.en"> GFDL CC-By-4.0 </a></p> 
+                </td>
+                <td>
+                    <p>Diagram of the First Isomorphism Theorem <br>
+                    Credit: Aleksandr Omelchenko <br>
+                    Source: <a href="https://commons.wikimedia.org/wiki/File:Diagram_for_the_First_Isomorphism_Theorem.png"> Wikimedia </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en"> CC-By-SA-4.0 </a></p> 
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p>Telescopes at dusk <br>
+                    Credit: Michael Quinn, National Parks Service <br>
+                    Source: <a href="https://www.flickr.com/photos/grand_canyon_nps/9348663186"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/2.0/deed.en"> CC-By-2.0 </a> </p>
+                </td>
+                <td>
+                    <p>Partner Acrobatics with @Tink <br>
+                    Credit: Hyper Hamlet <br>
+                    Source: <a href="https://www.flickr.com/photos/hyperxp/20908815852"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"> CC-By-NC-ND-2.0 </a> </p>
+                </td>
+                <td>
+                    <p>Flower Cross Stitch <br>
+                    Credit: Umaranishanmugam <br>
+                    Source: <a href="https://commons.wikimedia.org/wiki/File:Flower_cross_stitch.JPG"> Wikimedia </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/3.0/deed.en"> CC-By-3.0 </a></p>
+                </td>
+                <td>
+                    <p>John Dee's Alchemical Symbol <br>
+                    Credit: Stuart Rankin <br>
+                    Source:  <a href="https://www.flickr.com/photos/24354425@N03/28284192632"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by-nc/2.0/"> CC-By-NC-2.0 </a></p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p>Podcasting mic on a shock mount <br>
+                    Credit: kertojanaani.fi <br>
+                    Source: <a href="https://www.flickr.com/photos/165719418@N08/43329867122"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/4.0/deed.en"> CC-By-4.0 </a> </p>
+                </td>
+                <td>
+                    <p>Fantasy book <br>
+                    Credit: Theo Crazzolara <br>
+                    Source: <a href="https://www.flickr.com/photos/theocrazzolara/39889902532"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/2.0/"> CC-By-2.0 </a> </p>
+                </td>
+                <td>
+                    <p>Colorful music <br>
+                    Credit: semutimut <br>
+                    Source: <a href="https://www.stockvault.net/photo/277212/colorful-music-background"> stockvault </a> <br>
+                    License: <a href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0 1.0 </a> </p>
+                </td>
+                <td>
+                    <p>More arcade games <br>
+                    Credit: Steven Miller <br>
+                    Source: <a href="https://www.flickr.com/photos/aloha75/4906597504"> flickr </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/2.0/"> CC-By-2.0 </a> </p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p>Travel Trailer <br>
+                    Credit: PBoGS <br>
+                    Source: <a href="https://openverse.org/image/54d463b0-8e5f-4abe-9a52-6487c7632fa0?q=travel+trailer"> Openverse </a> <br>
+                    License: <a href="https://creativecommons.org/licenses/by/2.0/"> CC-By-2.0 </a> </p>
+                </td>
+                </tr> 
+                </table>
+                    -->
+                <footer class="image-attribution">
+                    <small>
+                        About Me image: 
+                        <cite>
+                            <a href="https://www.freepik.com/free-photo/flat-lay-notebook-with-list-desk_13696854.htm" target="_blank" rel="noopener">
+                                Flat lay notebook with to do list on desk
+                            </a>
+                        </cite>
+                        by Freepixels &mdash; 
+                        <a href="https://support.freepik.com/s/topic/0TO3V000000Cla4WAC/licenses?language=en_US" target="_blank" rel="noopener">Freepixels</a>
+                    </small>
+                    <small>
+                        Applied Math image: 
+                        <cite>
+                            <a href="https://commons.wikimedia.org/wiki/File:Sir-model-wikiversity.png" target="_blank" rel="noopener">
+                                SIR model without vital dynamics
+                            </a>
+                        </cite>
+                        by Engelbert Niehaus &mdash; 
+                        <a href="https://creativecommons.org/publicdomain/zero/4.0/deed.en" target="_blank" rel="noopener">GFDL CC-By-4.0</a>
+                    </small>
+                    <small>
+                        Pure Math image: 
+                        <cite>
+                            <a href="https://commons.wikimedia.org/wiki/File:Diagram_for_the_First_Isomorphism_Theorem.png" target="_blank" rel="noopener">
+                                Diagram of the First Isomorphism Theorem
+                            </a>
+                        </cite>
+                        by Aleksandr Omelchenko &mdash; 
+                        <a href="https://creativecommons.org/publicdomain/zero/4.0/deed.en" target="_blank" rel="noopener">CC-By-SA-4.0</a>
+                    </small>
+                    <small>
+                        Science image: 
+                        <cite>
+                            <a href="https://www.pexels.com/photo/moon-and-stars-813269/" target="_blank" rel="noopener">
+                                Telescopes at dusk
+                            </a>
+                        </cite>
+                        by Michael Quinn, National Parks Service &mdash; 
+                        <a href="https://creativecommons.org/licenses/by/2.0/deed.en" target="_blank" rel="noopener">CC-By-2.0</a>
+                    </small>
+                    <small>
+                        Recreation image: 
+                        <cite>
+                            <a href="https://www.flickr.com/photos/aloha75/4906597504" target="_blank" rel="noopener">
+                                More arcade games
+                            </a>
+                        </cite>
+                        by Steven Miller &mdash; 
+                        <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC-By-2.0</a>
+                    </small>
+                    <small>
+                        References image: 
+                        <cite>
+                            <a href="https://www.freepik.com/free-photo/stack-books-with-library-scene_134881267.htm" target="_blank" rel="noopener">
+                                A stack of books with a library scene behind
+                            </a>
+                        </cite>
+                        by nuraghies &mdash; 
+                        <a href="https://support.freepik.com/s/topic/0TO3V000000Cla4WAC/licenses?language=en_US" target="_blank" rel="noopener">Freepixels</a>
+                    </small>
+                    <small>
+                        Background image: 
+                        <cite>
+                            <a href="https://www.pexels.com/photo/moon-and-stars-813269/" target="_blank" rel="noopener">
+                                Moon and Stars
+                            </a>
+                        </cite>
+                        by Min An &mdash; 
+                        <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Pexels License</a>
+                    </small>
+                </footer>
+                <footer>
+                    <p>&#169 2025 by J Tyler Smith |  <a href="mailto:jtsdmpk@proton.me">jtsdmpk@proton.me</a></p>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>  
-<h3>Image credits:</h3>
-<p>Background: Moon and Stars <br>
-  Credit: Min An <br>
-  Source: <a href="https://www.pexels.com/photo/moon-and-stars-813269/">Pexel</a> <br>
-  License: <a href="https://www.pexels.com/license/"> CC as per Pexel</a></p>
-  
-<table>
-<tr>
-  <td>
-    <p>Scanning electromicrograph of an HIV-infected T cell <br>
-      Credit: NIAID <br> 
-      Source: <a href="https://www.flickr.com/photos/niaid/6813396647/in/photolist-bo5rrZ"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/2.0/deed.en"> CC-By-2.0 </a> </p>
-  </td>
-  <td>
-    <p>Pharmacokinetics and Pharmacodynamics <br>
-      Credit: Scivit <br>
-      Source: <a href="https://commons.wikimedia.org/wiki/File:Pharmacokinetics_and_Pharmacodynamics.svg"> Wikimedia </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/4.0/deed.en"> CC-By-4.0 </a></p> 
-  </td>
-  <td>
-    <p>SIR model without vital dynamics <br>
-      Credit: Engelbert Niehaus <br>
-      Source: <a href="https://commons.wikimedia.org/wiki/File:Sir-model-wikiversity.png"> Wikimedia </a> <br>
-      License: <a href="https://creativecommons.org/publicdomain/zero/4.0/deed.en"> GFDL CC-By-4.0 </a></p> 
-  </td>
-  <td>
-    <p>Diagram of the First Isomorphism Theorem <br>
-      Credit: Aleksandr Omelchenko <br>
-      Source: <a href="https://commons.wikimedia.org/wiki/File:Diagram_for_the_First_Isomorphism_Theorem.png"> Wikimedia </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en"> CC-By-SA-4.0 </a></p> 
-  </td>
-</tr>
-<tr>
-  <td>
-    <p>Telescopes at dusk <br>
-      Credit: Michael Quinn, National Parks Service <br>
-      Source: <a href="https://www.flickr.com/photos/grand_canyon_nps/9348663186"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/2.0/deed.en"> CC-By-2.0 </a> </p>
-  </td>
-  <td>
-    <p>Partner Acrobatics with @Tink <br>
-      Credit: Hyper Hamlet <br>
-      Source: <a href="https://www.flickr.com/photos/hyperxp/20908815852"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/"> CC-By-NC-ND-2.0 </a> </p>
-  </td>
-  <td>
-    <p>Flower Cross Stitch <br>
-      Credit: Umaranishanmugam <br>
-      Source: <a href="https://commons.wikimedia.org/wiki/File:Flower_cross_stitch.JPG"> Wikimedia </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/3.0/deed.en"> CC-By-3.0 </a></p>
-  </td>
-  <td>
-    <p>John Dee's Alchemical Symbol <br>
-      Credit: Stuart Rankin <br>
-      Source:  <a href="https://www.flickr.com/photos/24354425@N03/28284192632"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by-nc/2.0/"> CC-By-NC-2.0 </a></p>
-  </td>
-</tr>
-<tr>
-  <td>
-    <p>Podcasting mic on a shock mount <br>
-      Credit: kertojanaani.fi <br>
-      Source: <a href="https://www.flickr.com/photos/165719418@N08/43329867122"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/4.0/deed.en"> CC-By-4.0 </a> </p>
-  </td>
-  <td>
-    <p>Fantasy book <br>
-      Credit: Theo Crazzolara <br>
-      Source: <a href="https://www.flickr.com/photos/theocrazzolara/39889902532"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/2.0/"> CC-By-2.0 </a> </p>
-  </td>
-  <td>
-    <p>Colorful music <br>
-      Credit: semutimut <br>
-      Source: <a href="https://www.stockvault.net/photo/277212/colorful-music-background"> stockvault </a> <br>
-      License: <a href="https://creativecommons.org/publicdomain/zero/1.0/"> CC0 1.0 </a> </p>
-  </td>
-  <td>
-    <p>More arcade games <br>
-      Credit: Steven Miller <br>
-      Source: <a href="https://www.flickr.com/photos/aloha75/4906597504"> flickr </a> <br>
-      License: <a href="https://creativecommons.org/licenses/by/2.0/"> CC-By-2.0 </a> </p>
-  </td>
-</tr> 
-</table> 
-</body>
+                    <ul class="socials">
+                        <li>
+                        <a href="https://www.linkedin.com/in/jtylersmith-biomath/" target="_blank"><img src="images/icon-logo-linkedin.png" alt="My LinkedIn profile"></a>
+                        </li>
+                        <li>
+                        <a href="https://bsky.app/profile/jtsdmpk.bsky.social" target="_blank"><img src="images/icon-logo-bsky.png" alt="My Bsky profile"></a>
+                        </li>
+                        <li>
+                        <a href="https://steamcommunity.com/id/jtsDMPK/" target="_blank"><img src="images/icon-logo-steam.png" alt="My Steam profile"></a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+            </div>
+            
+                    
+        </div> 
+    </body>
 </html>
