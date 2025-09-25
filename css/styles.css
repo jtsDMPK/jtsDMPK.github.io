@@ -1,3 +1,14 @@
+/* styles.css */
+/* J Tyler Smith
+   jtsDMPK website
+   CSS stylesheet
+   Last updated: Sept 25, 2025
+*/
+
+/* Special thanks to Christina Truong
+    for her course provided on LinkedIn Learning,
+    "CSS Essential Training" (2020).
+
 /*
 COLOR PALETTE
 
@@ -47,6 +58,14 @@ h3 {
     margin: 0 auto;
     padding: 30px;
     max-width: 1500px;
+}
+@media screen and (max-width:650px){
+    .home .content-wrapper {
+        padding: 10px;
+    }
+    .content-bg {
+        padding: 20px;
+    }
 }
 
 
@@ -111,6 +130,13 @@ footer a:hover {
     text-align: center;
 }
 
+.subpage-list p .image-attribution{
+    font-size: 0.5rem;
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
 .subpage-list a{
     color: #5B1C08
 }
@@ -121,16 +147,18 @@ footer a:hover {
 
 
 
+
+
 /* Section Links */
 
 
 /* Image attributions */
-.image-attribution {
-    font-size: small;
+/*.image-attribution {
+    font-size: 0.5rem;
     text-align: right;
-    margin-top: -20px;
-    margin-bottom: 20px;
-}
+    margin-top: 0px;
+    margin-bottom: 5px;
+}*/
 
 /* Index/Home page */
 .index {
@@ -186,6 +214,31 @@ footer a:hover {
     float: left;
     margin-right: 20px;
 }
+@media screen and (min-width:860px) {
+    .project-item {
+        display: flow-root;
+    }
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width:650px) and (max-width:859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+    .project-item img {
+        width: 100%;
+    }
+}
+@media screen and (max-width:500px){
+    .project-item img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
 
 
 /* About Me: Work Experience */
@@ -200,6 +253,16 @@ footer a:hover {
 }
 .work-summary p:first-child {
     margin-top: 0;
+}
+@media screen and (min-width: 860px) {
+    .work-item {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        column-gap: 20px;
+    }
+    .work-summary p:first-child {
+        margin-top: 0;
+    }
 }
 
 /* About Me: Education */
@@ -241,6 +304,52 @@ td {
   vertical-align: bottom;
 }
 
+/* Applied Math page */
+.applied-math header::before{
+    background: url(../images/Sir-model-wikiversity.png) center;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 300px;
+}
+
+/* Science page */
+.science header::before{
+    background: url(../images/telescope-at-dusk.jpg) center;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 300px;
+}
+
+/* Pure Math page */
+.pure-math header::before{
+    background: url(../images/Diagram_for_the_First_Isomorphism_Theorem.png) center;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 300px;
+}
+
+/* Recreation page */
+.recreation header::before{
+    background: url(../images/more-arcade-games.jpg) center;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 300px;
+}
+
+/* Resources page */
+.resources header::before{
+    background: url(../images/book-stacks.jpg) center;
+    background-size: cover;
+    content: "";
+    display: block;
+    height: 300px;
+}
+
+
 /* FOOTER
 ------------------------------------*/
 footer {
@@ -263,4 +372,18 @@ footer {
 }
 .socials img:hover {
     opacity: 0.5;
+}
+@media screen and (min-width: 860px){
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width: 859px){
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+
 }
