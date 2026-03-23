@@ -130,9 +130,16 @@ footer a:hover {
     text-align: center;
 }
 
-.subpage-list p .image-attribution{
-    font-size: 0.5rem;
+.subpage-list .image-attribution{
+    font-size: 0.65em;
     text-align: right;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.subpage-list .descriptor{
+    font-size: 0.8em;
+    text-align: center;
     margin-top: 0px;
     margin-bottom: 5px;
 }
