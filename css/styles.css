@@ -9,7 +9,7 @@
     for her course provided on LinkedIn Learning,
     "CSS Essential Training" (2020).
 
-/*
+*/
 COLOR PALETTE
 
 Sandy beige   #bcaa96
@@ -60,10 +60,10 @@ h3 {
     max-width: 1500px;
 }
 @media screen and (max-width:650px){
-    .home .content-wrapper {
+    .index .content-wrapper {
         padding: 10px;
     }
-    .content-bg {
+    .index .content-bg {
         padding: 20px;
     }
 }
@@ -109,32 +109,38 @@ footer a:hover {
 
 
 /* Subpage Lists - With Images and Links */
-.subpage-list{
+.subpage-list {
     display: grid;
-    grid-template-rows: 300px;
-    grid-auto-rows: 300px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    column-gap: 30px;
-    row-gap: 10px;
-    justify-content: center;
-}
-.subpage-list img{
-    height: 200px;
-    width: 300px;
-    object-fit: cover;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: start;
 }
 
-.subpage-list p{
+.subpage-list > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subpage-list img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.subpage-list p {
     margin: 5px 0;
-    font-size: 20px;
+    font-size: 1.1rem;
     text-align: center;
 }
 
-.subpage-list .image-attribution{
-    font-size: 0.65em;
+.subpage-list .image-attribution {
+    font-size: 0.75rem;
     text-align: right;
-    margin-top: 0px;
-    margin-bottom: 5px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .subpage-list .descriptor{
@@ -169,11 +175,14 @@ footer a:hover {
 
 /* Index/Home page */
 .index {
-    background: url(../images/pexels-min-an-813269.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
- }
+    background: url(../images/pexels-min-an-813269.jpg) center / cover no-repeat;
+}
+
+@media screen and (min-width: 861px) {
+    .index {
+        background-attachment: fixed;
+    }
+}
 
 .index .content-wrapper {
       flex: 0 1 auto;
@@ -183,7 +192,7 @@ footer a:hover {
 .index .content-bg {
       background: rgb(255 255 255 / 0.6);
       padding: 20px;
-      margin: 50px;
+      margin: 20px;
 }
 
 /* About Me page */
@@ -364,7 +373,21 @@ footer {
     color: #d3d4d6;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 859px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socials li {
+        margin: 0 8px;
+    }
 }
 .socials {
     list-style-type: none;
@@ -380,13 +403,7 @@ footer {
 .socials img:hover {
     opacity: 0.5;
 }
-@media screen and (min-width: 860px){
-    footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-}
+
 @media screen and (max-width: 859px){
     footer {
         text-align: center;
